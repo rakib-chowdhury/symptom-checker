@@ -66,16 +66,15 @@
 						</div>
 						<!-- /top-wizard -->
 						<h3>Welcome to symptom checker</h3>
-						<form id="wrapped" method="POST">
+						<form id="wrapped" class="survey-from" method="POST">
 							<input id="website" name="website" type="text" value="">
 							<!-- Leave for security protection, read docs for details -->
 							<div id="middle-wizard">
-
-								<div class="step">
-									<h3 class="main_question"><strong>1/6</strong>Are you asking for yourself or someone else?</h3>
+								<div id="1" class="step">
+									<h3 class="main_question"><strong>1/5</strong>Are you asking for yourself or someone else?</h3>
 									<div class="form-group radio_input">
 										<label class="container_radio">Yes
-											<input type="radio" name="yes_no" value="yes" class="required">
+											<input type="radio" name="yes_no" value="yes" class="required" >
 											<span class="checkmark"></span>
 										</label>
 										<label class="container_radio">No
@@ -84,144 +83,190 @@
 										</label>
 									</div>
 								</div>
-
 								<!-- /step-->
-								<div class="step">
-									<h3 class="main_question"><strong>2/6</strong>Select your age range?</h3>
+								<div id="2" class="step">
+									<h3 class="main_question"><strong>2/5</strong>Select your age range?</h3>
 									<div class="form-group">
 										<label class="container_radio version_2">70+
-											<input type="radio" name="age" value="70" class="required">
+											<input type="radio" name="age" value="5" class="required">
 											<span class="checkmark"></span>
 										</label>
 									</div>
 									<div class="form-group">
 										<label class="container_radio version_2">60-69
-											<input type="radio" name="age" value="60" class="required">
+											<input type="radio" name="age" value="4" class="required">
 											<span class="checkmark"></span>
 										</label>
 									</div>
 									<div class="form-group">
 										<label class="container_radio version_2">50-59
-											<input type="radio" name="age" value="50" class="required">
+											<input type="radio" name="age" value="3" class="required">
 											<span class="checkmark"></span>
 										</label>
 									</div>
 									<div class="form-group">
 										<label class="container_radio version_2">35-49
-											<input type="radio" name="age" value="35" class="required">
+											<input type="radio" name="age" value="1" class="required">
 											<span class="checkmark"></span>
 										</label>
 									</div>
 									<div class="form-group">
-										<label class="container_radio version_2">0-35
-											<input type="radio" name="age" value="0" class="required">
+										<label class="container_radio version_2">1-35
+											<input type="radio" name="age" value="0.5" class="required">
 											<span class="checkmark"></span>
 										</label>
 									</div>
 								</div>
 
-								<div class="step">
-									<h3 class="main_question"><strong>3/6</strong> Gender?</h3>
-									<div class="form-group">
-										<label class="container_radio version_2">Male
-											<input type="radio" name="gender" value="70" class="required">
-											<span class="checkmark"></span>
-										</label>
-									</div>
-									<div class="form-group">
-										<label class="container_radio version_2">Femal
-											<input type="radio" name="gender" value="60" class="required">
-											<span class="checkmark"></span>
-										</label>
-									</div>
-								</div>
-
-								<div class="step">
-									<h3 class="main_question"><strong>4/6</strong> What are your symptoms?</h3>
+								<div id="3" class="step">
+									<h3 class="main_question"><strong>3/5</strong> What are your symptoms?</h3>
 									<div class="form-group">
 										<label class="container_check version_2">Shortness of Breath
-											<input type="checkbox" name="symptoms[]" value="A" class="required">
+											<input type="checkbox" name="symptom_page_one[]" value="2" class="required">
 											<span class="checkmark"></span>
 										</label>
 									</div>
 
 									<div class="form-group">
 										<label class="container_check version_2">Fever
-											<input type="checkbox" name="symptoms[]" value="B" class="required">
+											<input type="checkbox" name="symptom_page_one[]" value="0.75" class="required">
 											<span class="checkmark"></span>
 										</label>
 									</div>
 
 									<div class="form-group">
 										<label class="container_check version_2">Dry Cough
-											<input type="checkbox" name="symptoms[]" value="C" class="required">
+											<input type="checkbox" name="symptom_page_one[]" value="0.75" class="required">
 											<span class="checkmark"></span>
 										</label>
 									</div>
 
 									<div class="form-group">
 										<label class="container_check version_2">None of the above
-											<input type="checkbox" name="symptoms[]" value="D" class="required">
+											<input type="checkbox" name="symptom_page_one[]" value="0" class="required symptom_page_one_zero">
 											<span class="checkmark"></span>
 										</label>
 									</div>
 								</div>
 
-								<div class="step">
-									<h3 class="main_question"><strong>5/6</strong> Do you have any of these additional symptom?</h3>
+								<div id="4" class="step">
+									<h3 class="main_question"><strong>4/5</strong> Do you have any of these additional symptom?</h3>
 									<div class="form-group">
 										<label class="container_check version_2">Nausea
-											<input type="checkbox" name="aditional_symptoms[]" value="A" class="required">
+											<input type="checkbox" name="symptom_page_two[]" value="0.65" class="required">
 											<span class="checkmark"></span>
 										</label>
 									</div>
 									<div class="form-group">
 										<label class="container_check version_2">Diarrhea
-											<input type="checkbox" name="aditional_symptoms[]" value="B" class="required">
+											<input type="checkbox" name="symptom_page_two[]" value="0.65" class="required">
 											<span class="checkmark"></span>
 										</label>
 									</div>
 
 									<div class="form-group">
 										<label class="container_check version_2">Fatigue and Body ache
-											<input type="checkbox" name="aditional_symptoms[]" value="C" class="required">
+											<input type="checkbox" name="symptom_page_two[]" value="0.6" class="required">
 											<span class="checkmark"></span>
 										</label>
 									</div>
 
 									<div class="form-group">
 										<label class="container_check version_2">Sore throat
-											<input type="checkbox" name="aditional_symptoms[]" value="D" class="required">
+											<input type="checkbox" name="symptom_page_two[]" value="0.6" class="required">
 											<span class="checkmark"></span>
 										</label>
 									</div>
 
 									<div class="form-group">
 										<label class="container_check version_2">None of the above
-											<input type="checkbox" name="aditional_symptoms[]" value="E" class="required">
+											<input type="checkbox" name="symptom_page_two[]" value="0" class="required symptom_page_two_zero">
 											<span class="checkmark"></span>
 										</label>
 									</div>
-
 								</div>
 
-								<div class="step">
-									<h3 class="main_question"><strong>6/6</strong>How many days have you had these symptoms?</h3>
+								<div id="5" style="display: none"  class="symptoms-days">
+									<h3 class="main_question"><strong>5/5</strong>How many days have you had these symptoms?</h3>
 									<div class="form-group">
 										<label class="container_radio version_2">Day 1-4
-											<input type="radio" name="symptoms_days" value="1" class="required">
+											<input type="radio" name="symptoms_duration" value="0.5" class="required">
 											<span class="checkmark"></span>
 										</label>
 									</div>
 									<div class="form-group">
 										<label class="container_radio version_2">Day 5-7
-											<input type="radio" name="symptoms_days" value="5" class="required">
+											<input type="radio" name="symptoms_duration" value="1" class="required">
 											<span class="checkmark"></span>
 										</label>
 									</div>
 									<div class="form-group">
 										<label class="container_radio version_2">Day 8+
-											<input type="radio" name="symptoms_days" value="8" class="required">
+											<input type="radio" name="symptoms_duration" value="2" class="required">
+											<span class="checkmark"></span>
+										</label>
+									</div>
+								</div>
+
+								<div id="6" style="display: none"  class="pre-existing-condition">
+									<h3 class="main_question"><strong>6/6</strong>Do You Have Any Pre-Existing Conditions?</h3>
+									<div class="form-group">
+										<label class="container_check version_2">Do you smoke?
+											<input type="checkbox" name="pre_existing_condition" value="0.35" class="required">
+											<span class="checkmark"></span>
+										</label>
+									</div>
+									<div class="form-group">
+										<label class="container_check version_2">Do you have diabetes?
+											<input type="checkbox" name="pre_existing_condition" value="0.75" class="required">
+											<span class="checkmark"></span>
+										</label>
+									</div>
+									<div class="form-group">
+										<label class="container_check version_2">Do you have hypertension?
+											<input type="checkbox" name="pre_existing_condition" value="1.5" class="required">
+											<span class="checkmark"></span>
+										</label>
+									</div>
+									<div class="form-group">
+										<label class="container_check version_2">Are you overweight or obese?
+											<input type="checkbox" name="pre_existing_condition" value="0.35" class="required">
+											<span class="checkmark"></span>
+										</label>
+									</div>
+									<div class="form-group">
+										<label class="container_check version_2">Do you have a previous history of heart attack or any other heart conditions?
+											<input type="checkbox" name="pre_existing_condition" value="1" class="required">
+											<span class="checkmark"></span>
+										</label>
+									</div>
+									<div class="form-group">
+										<label class="container_check version_2">Do you have a history of liver conditions?
+											<input type="checkbox" name="pre_existing_condition" value="0.65" class="required">
+											<span class="checkmark"></span>
+										</label>
+									</div>
+									<div class="form-group">
+										<label class="container_check version_2">Do you have any kidney diseases?
+											<input type="checkbox" name="pre_existing_condition" value="0.5" class="required">
+											<span class="checkmark"></span>
+										</label>
+									</div>
+									<div class="form-group">
+										<label class="container_check version_2">Did you have any organ/bone marrow transplant?
+											<input type="checkbox" name="pre_existing_condition" value="3" class="required">
+											<span class="checkmark"></span>
+										</label>
+									</div>
+									<div class="form-group">
+										<label class="container_check version_2">Are you pregnant?
+											<input type="checkbox" name="pre_existing_condition" value="1" class="required">
+											<span class="checkmark"></span>
+										</label>
+									</div>
+									<div class="form-group">
+										<label class="container_check version_2">None of the above?
+											<input type="checkbox" name="pre_existing_condition" value="0" class="required">
 											<span class="checkmark"></span>
 										</label>
 									</div>
@@ -231,7 +276,7 @@
 							<!-- /middle-wizard -->
 							<div id="bottom-wizard">
 								<button type="button" name="backward" class="backward">Prev</button>
-								<button type="button" name="forward" class="forward">Next</button>
+								<button type="button" name="forward" class="forward" onclick="get_step_id()">Next</button>
 								<button type="submit" name="process" class="submit">Submit</button>
 							</div>
 							<!-- /bottom-wizard -->
@@ -289,6 +334,51 @@
 
 	<!-- Wizard script -->
 	<script src="js/survey_func.js"></script>
+
+	<script>
+		var symptom_page_one = '';
+		var symptom_page_two = '';
+
+		function get_step_id(){
+			var id  = $(".step.current").attr('id');
+			var age = '';
+			if (id == 3){
+
+				symptom_page_one = $('input[name="symptom_page_one[]"]:checked').map(function () {
+					return this.value; // $(this).val()
+				}).get();
+
+			}else if(id == 4){
+				symptom_page_two = $('input[name="symptom_page_two[]"]:checked').map(function () {
+					return this.value; // $(this).val()
+				}).get();
+
+				if ((symptom_page_one[0] == 0) && (symptom_page_two[0] == 0) ){
+					$(".pre-existing-condition").addClass('step');
+				}else{
+					$(".symptoms-days").addClass('step');
+				}
+			}
+
+		}
+
+		$('input[name="symptom_page_one[]"').on('change', function(event) {
+			if (event.target.value == 0){
+				$('input[name="symptom_page_one[]"').not(this).prop('checked', false);
+			}else{
+				$(".symptom_page_one_zero").prop('checked',false);
+			}
+		});
+
+		$('input[name="symptom_page_two[]"').on('change', function(event) {
+			if (event.target.value == 0){
+				$('input[name="symptom_page_two[]"').not(this).prop('checked', false);
+			}else{
+				$(".symptom_page_two_zero").prop('checked',false);
+			}
+		});
+
+	</script>
 
 </body>
 </html>
