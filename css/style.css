@@ -854,6 +854,11 @@ footer ul {
         width: 50%;
         height: 50%;
     }
+
+    .top-logo > img{
+        height: 100%;
+        width: 100%;
+    }
 }
 
 footer ul li {
@@ -916,8 +921,8 @@ footer ul li a:hover {
     }
 
     .top-logo > img{
-        height: auto;
-        width: 50%;
+        height: 100%;
+        width: 100%;
     }
 }
 
