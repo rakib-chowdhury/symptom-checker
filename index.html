@@ -70,7 +70,7 @@
 			</div>
 			<div class="col-lg-12 content-right" id="start">
 				<div id="wizard_container">
-					<!--<div class="result-area">
+					<!--<div class="result-area" style="border-bottom: 1px solid black">
 						<p class="" style="font-size: 18px; font-weight: bold; text-align: left; color:darkgreen">
 							Currently your symptoms do not seem to require immediate medical attention.
 							IT IS HOWEVER VERY IMPORTANT that you stay indoors for at least 14 days and
@@ -91,6 +91,8 @@
 								in your chest, consult a doctor or call the IEDCR hotline.</p></li>
 						</ul>
 					</div>-->
+
+
 					<!--<div class="result-area">
 						<p class="" style="font-size: 15px; font-weight: bold; text-align: left; color: #1155cc">
 							Your symptoms at this moment do not seem to require immediate medical attention.
@@ -148,31 +150,31 @@
 									<h3 class="main_question"><strong>2/6</strong>Select your age range?</h3>
 									<div class="form-group">
 										<label class="container_radio version_2">70+
-											<input type="radio" name="age" value="5" class="required age">
+											<input type="radio" name="age" value="5" class="required patient_age">
 											<span class="checkmark"></span>
 										</label>
 									</div>
 									<div class="form-group">
 										<label class="container_radio version_2">60-69
-											<input type="radio" name="age" value="4" class="required age">
+											<input type="radio" name="age" value="4" class="required patient_age">
 											<span class="checkmark"></span>
 										</label>
 									</div>
 									<div class="form-group">
 										<label class="container_radio version_2">50-59
-											<input type="radio" name="age" value="3" class="required age">
+											<input type="radio" name="age" value="3" class="required patient_age">
 											<span class="checkmark"></span>
 										</label>
 									</div>
 									<div class="form-group">
 										<label class="container_radio version_2">35-49
-											<input type="radio" name="age" value="1" class="required age">
+											<input type="radio" name="age" value="1" class="required patient_age">
 											<span class="checkmark"></span>
 										</label>
 									</div>
 									<div class="form-group">
 										<label class="container_radio version_2">1-35
-											<input type="radio" name="age" value="0.5" class="required age">
+											<input type="radio" name="age" value="0.5" class="required patient_age">
 											<span class="checkmark"></span>
 										</label>
 									</div>
@@ -553,20 +555,26 @@
 
 		async function submit_survey(){
 
-			var age = $(".age").val();
+			var age = $(".patient_age:checked").val();
+			console.log("age: " + age);
 			var symptoms_one = $('input[name="symptom_page_one[]"]:checked').map(function () {
 				return this.value; // $(this).val()
 			}).get();
+			console.log("symptom_page_one Array: " + symptoms_one);
 
 			var symptoms_two = $('input[name="symptom_page_two[]"]:checked').map(function () {
 				return this.value; // $(this).val()
 			}).get();
 
+			console.log("symptom_page_two Array: " +  symptoms_two);
+
 			var pre_existing_condition = $('input[name="pre_existing_condition[]"]:checked').map(function () {
 				return this.value; // $(this).val()
 			}).get();
+			console.log("pre_existing_condition Array: " + pre_existing_condition);
 
 			var symptoms_days = $(".symptoms").val();
+			console.log("symptoms_days : " + symptoms_days);
 
 			var sum_symptoms_one = 0;
 			var sum_symptoms_two = 0;
@@ -575,13 +583,19 @@
 			for (var i = 0; i<symptoms_one.length; i++){
 				sum_symptoms_one = sum_symptoms_one + Number(symptoms_one[i]);
 			}
+			console.log("sum_symptoms_one Sum: " + sum_symptoms_one);
 
 			for (var i = 0; i<symptoms_two.length; i++){
 				sum_symptoms_two = sum_symptoms_two + Number(symptoms_two[i]);
 			}
+
+			console.log("sum_symptoms_two Sum: " + sum_symptoms_two);
+
 			for (var i = 0; i<pre_existing_condition.length; i++){
 				sum_pre_existing_condition = sum_pre_existing_condition + Number(pre_existing_condition[i]);
 			}
+
+			console.log("pre_existing_condition Sum: " + sum_pre_existing_condition);
 
 			var calculate_seventy = 0;
 			var calculate_thirty = 0;
@@ -591,10 +605,13 @@
 			}else{
 				calculate_seventy = (Number(age) + sum_symptoms_one + sum_symptoms_two + Number(symptoms_days))*0.7;
 			}*/
+			var sum_seventy = Number(age) + sum_symptoms_one + sum_symptoms_two + Number(symptoms_days);
+			console.log("sum_seventy :"+ sum_seventy);
 
 			calculate_seventy = (Number(age) + sum_symptoms_one + sum_symptoms_two + Number(symptoms_days))*0.7;
 			calculate_thirty = sum_pre_existing_condition * 0.3;
-
+			console.log("Seventy: "+calculate_seventy);
+			console.log("Thirty: " +calculate_thirty);
 			var total = calculate_seventy + calculate_thirty;
 
 			if (total >= 6){
