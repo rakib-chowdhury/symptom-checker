@@ -819,8 +819,8 @@ header #social ul li a {
 }
 
 footer {
-    border-top: 1px solid #ededed;
-    background: #ededed;
+    /*border-top: 1px solid #ededed;*/
+    background: #ffffff;
     padding-bottom: 1%;
 }
 

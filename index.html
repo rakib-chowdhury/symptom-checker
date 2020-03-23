@@ -70,7 +70,7 @@
 			</div>
 			<div class="col-lg-12 content-right" id="start">
 				<div id="wizard_container">
-					<!--<div class="result-area" style="border-bottom: 1px solid black">
+					<!--<div class="result-area" style="border-bottom: 1px solid #ededed">
 						<p class="" style="font-size: 18px; font-weight: bold; text-align: left; color:darkgreen">
 							Currently your symptoms do not seem to require immediate medical attention.
 							IT IS HOWEVER VERY IMPORTANT that you stay indoors for at least 14 days and
@@ -90,8 +90,10 @@
 							<li><p style="font-weight: bold; color: black">If you face difficulty breathing, experience sudden dizziness and feel pressure/pain
 								in your chest, consult a doctor or call the IEDCR hotline.</p></li>
 						</ul>
+					</div>
+					<div class="re-test pull-right" style="float: right; margin-top: 5px;">
+						<button type="button" style="background: #434bdf" onclick="restart_test()" class="test_again btn btn-info">Re-start Test</button>
 					</div>-->
-
 
 					<!--<div class="result-area">
 						<p class="" style="font-size: 15px; font-weight: bold; text-align: left; color: #1155cc">
@@ -625,17 +627,19 @@
 			var total = calculate_seventy + calculate_thirty;
 			console.log("Total: " + total);
 			if (total >= 6){
-				var high = '<div class="result-area">\n' +
+				var high = '<div class="result-area" style="border-bottom: 1px solid #ededed">\n' +
 						'\t\t\t\t\t\t<p class="" style="font-size: 18px; font-weight: bold; text-align: left; color: red">\n' +
 						'\t\t\t\t\t\t\tWe recommend you seek immediate medical attention - please press “Doctor Consultation Below” to connect with a doctor.\n' +
 						'\t\t\t\t\t\t\tYou can also choose to contact IEDCR or another doctor if you have access to them\n' +
 						'\t\t\t\t\t\t</p>\n' +
+						'\t\t\t\t\t</div><div class="re-test pull-right" style="float: right; margin-top: 5px;">\n' +
+						'\t\t\t\t\t\t<button type="button" style="background: #434bdf" onclick="restart_test()" class="test_again btn btn-info">Re-start Test</button>\n' +
 						'\t\t\t\t\t</div>';
 
 				//high = high + placeHolder;
 				$("#wizard_container").html(high);
 			}else if(total >= 4.4 && total <= 5.99){
-				var medium = '<div class="result-area">\n' +
+				var medium = '<div class="result-area" style="border-bottom: 1px solid #ededed">\n' +
 						'\t\t\t\t\t\t<p class="" style="font-size: 15px; font-weight: bold; text-align: left; color: #1155cc">\n' +
 						'\t\t\t\t\t\t\tYour symptoms at this moment do not seem to require immediate medical attention.\n' +
 						'\t\t\t\t\t\t</p>\n' +
@@ -658,11 +662,13 @@
 						'\t\t\t\t\t\t\t<li><p style="font-weight: bold; color: black">Only step outside if it’s an emergency\n' +
 						'\t\t\t\t\t\t\t\tand try to work from home. If you must step outside, wear a mask</p></li>\n' +
 						'\t\t\t\t\t\t</ul>\n' +
+						'\t\t\t\t\t</div><div class="re-test pull-right" style="float: right; margin-top: 5px;">\n' +
+						'\t\t\t\t\t\t<button type="button" style="background: #434bdf" onclick="restart_test()" class="test_again btn btn-info">Re-start Test</button>\n' +
 						'\t\t\t\t\t</div>';
 
 				$("#wizard_container").html(medium);
 			}else{
-				var low = '<div class="result-area">\n' +
+				var low = '<div class="result-area" style="border-bottom: 1px solid #ededed">\n' +
 						'\t\t\t\t\t\t<p class="" style="font-size: 18px; font-weight: bold; text-align: left; color:darkgreen">\n' +
 						'\t\t\t\t\t\t\tCurrently your symptoms do not seem to require immediate medical attention.\n' +
 						'\t\t\t\t\t\t\tIT IS HOWEVER VERY IMPORTANT that you stay indoors for at least 14 days and\n' +
@@ -682,6 +688,8 @@
 						'\t\t\t\t\t\t\t<li><p style="font-weight: bold; color: black">If you face difficulty breathing, experience sudden dizziness and feel pressure/pain\n' +
 						'\t\t\t\t\t\t\t\tin your chest, consult a doctor or call the IEDCR hotline.</p></li>\n' +
 						'\t\t\t\t\t\t</ul>\n' +
+						'\t\t\t\t\t</div><div class="re-test pull-right" style="float: right; margin-top: 5px;">\n' +
+						'\t\t\t\t\t\t<button type="button" style="background: #434bdf" onclick="restart_test()" class="test_again btn btn-info">Re-start Test</button>\n' +
 						'\t\t\t\t\t</div>';
 
 				//low = low + placeHolder;
@@ -740,6 +748,10 @@
 				active_deactive(1);
 				$("button.forward").attr('disabled',true);
 			}
+		}
+
+		function restart_test(){
+			location.reload();
 		}
 
 	</script>
