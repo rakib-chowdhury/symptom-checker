@@ -682,7 +682,7 @@
 
 		async function calculate_level(){
 
-			var age = $(".age").val();
+			var age = $(".patient_age:checked").val();
 			var symptoms_one = $('input[name="symptom_page_one[]"]:checked').map(function () {
 				return this.value; // $(this).val()
 			}).get();
