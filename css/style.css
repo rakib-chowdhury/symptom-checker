@@ -425,7 +425,7 @@ a.btn_1.rounded,
 @media (max-width: 991px) {
     .content-right {
         height: auto;
-        padding: 30px 15px
+        text-align: center;
     }
 }
 
