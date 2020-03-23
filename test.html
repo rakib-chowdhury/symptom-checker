@@ -414,7 +414,7 @@
 				'\t\t\t\t\t\t\t\t\t</div>\n' +
 				'\t\t\t\t\t\t\t\t\t<div class="form-group">\n' +
 				'\t\t\t\t\t\t\t\t\t\t<label class="container_radio version_2">Day 8+\n' +
-				'\t\t\t\t\t\t\t\t\t\t\t<input type="radio" name="symptoms_duration" value="2"  onchange="symptoms_day()" class="required symptoms">\n' +
+				'\t\t\t\t\t\t\t\t\t\t\t<input type="radio" name="symptoms_duration" value="2.5"  onchange="symptoms_day()" class="required symptoms">\n' +
 				'\t\t\t\t\t\t\t\t\t\t\t<span class="checkmark"></span>\n' +
 				'\t\t\t\t\t\t\t\t\t\t</label>\n' +
 				'\t\t\t\t\t\t\t\t\t</div>';
@@ -550,7 +550,7 @@
 			var total = calculate_seventy + calculate_thirty;
 			console.log("Total: " + total);
 			if (total >= 6){
-				var high = '<div class="result-area" style="border-bottom: 1px solid #ededed">\n' +
+				var high = '<div class="result-area" style="border-bottom: 1px solid #ededed"><h3 class="text-center" style="color: red">Tier 1: 0.5 - 4.39</h3>\n' +
 						'\t\t\t\t\t\t<p class="" style="font-size: 18px; font-weight: bold; text-align: left; color: red">\n' +
 						'\t\t\t\t\t\t\tWe recommend you seek immediate medical attention - please press “Doctor Consultation Below” to connect with a doctor.\n' +
 						'\t\t\t\t\t\t\tYou can also choose to contact IEDCR or another doctor if you have access to them\n' +
@@ -561,8 +561,8 @@
 
 				//high = high + placeHolder;
 				$("#wizard_container").html(high);
-			}else if(total >= 4.4 && total <= 5.99){
-				var medium = '<div class="result-area" style="border-bottom: 1px solid #ededed">\n' +
+			}else if(total >= 4.4 && total <= 5.94){
+				var medium = '<div class="result-area" style="border-bottom: 1px solid #ededed"><h3 class="text-center" style="color: #1155cc">Tier 2: 4.4 - 5.94</h3>\n' +
 						'\t\t\t\t\t\t<p class="" style="font-size: 15px; font-weight: bold; text-align: left; color: #1155cc">\n' +
 						'\t\t\t\t\t\t\tYour symptoms at this moment do not seem to require immediate medical attention.\n' +
 						'\t\t\t\t\t\t</p>\n' +
@@ -591,7 +591,7 @@
 
 				$("#wizard_container").html(medium);
 			}else{
-				var low = '<div class="result-area" style="border-bottom: 1px solid #ededed">\n' +
+				var low = '<div class="result-area" style="border-bottom: 1px solid #ededed"><h3 class="text-center" style="color:darkgreen">Tier 3: 5.94+</h3>\n' +
 						'\t\t\t\t\t\t<p class="" style="font-size: 18px; font-weight: bold; text-align: left; color:darkgreen">\n' +
 						'\t\t\t\t\t\t\tCurrently your symptoms do not seem to require immediate medical attention.\n' +
 						'\t\t\t\t\t\t\tIT IS HOWEVER VERY IMPORTANT that you stay indoors for at least 14 days and\n' +
@@ -624,9 +624,11 @@
 		async function calculate_level(){
 
 			var age = $(".patient_age:checked").val();
+			console.log("age :" + age);
 			var symptoms_one = $('input[name="symptom_page_one[]"]:checked').map(function () {
 				return this.value; // $(this).val()
 			}).get();
+            console.log("symptom_page_one :" + symptoms_one);
 
 			var symptoms_two = $('input[name="symptom_page_two[]"]:checked').map(function () {
 				return this.value; // $(this).val()
@@ -645,13 +647,17 @@
 			for (var i = 0; i<symptoms_one.length; i++){
 				sum_symptoms_one = sum_symptoms_one + Number(symptoms_one[i]);
 			}
+			console.log(sum_symptoms_one);
 
 			for (var i = 0; i<symptoms_two.length; i++){
 				sum_symptoms_two = sum_symptoms_two + Number(symptoms_two[i]);
 			}
+			console.log(sum_symptoms_two);
+
 			for (var i = 0; i<pre_existing_condition.length; i++){
 				sum_pre_existing_condition = sum_pre_existing_condition + Number(pre_existing_condition[i]);
 			}
+			console.log(sum_pre_existing_condition);
 
 			var calculate_seventy = 0;
 			var calculate_thirty = 0;
@@ -664,8 +670,8 @@
 			calculate_seventy = (Number(age) + sum_symptoms_one + sum_symptoms_two + Number(symptoms_days))*0.7;
 
 			var total = calculate_seventy;
-			console.log(total);
-			if (total < 6){
+			console.log("Calculate: "+total);
+			if (total < 5.95){
 				$('.pre-existing-condition_2').html(pre_existing_2);
 			}else{
 				active_deactive(1);
