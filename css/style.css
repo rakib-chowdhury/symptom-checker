@@ -348,13 +348,13 @@ a.btn_1.rounded,
 @media (max-width: 991px) {
     .content-left-wrapper {
         height: auto;
-        padding: 95px 30px 35px 30px
+        padding: 10px 15px 0px 0px;
     }
 }
 
 @media (max-width: 767px) {
     .content-left-wrapper {
-        padding: 95px 15px 35px 15px
+        padding: 10px 15px 0px 0px;
     }
 }
 
