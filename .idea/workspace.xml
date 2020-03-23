@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="ae99ee2c-2deb-4229-a685-4de0b1ba5648" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -29,7 +30,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="C:/xampp_new/htdocs/momenta_web" />
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -42,7 +43,8 @@
       <option name="presentableId" value="Default" />
       <updated>1584873522288</updated>
       <workItem from="1584873523594" duration="3493000" />
-      <workItem from="1584898078750" duration="11312000" />
+      <workItem from="1584898078750" duration="11860000" />
+      <workItem from="1584935275852" duration="13987000" />
     </task>
     <servers />
   </component>
@@ -50,13 +52,17 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="378" y="187" key="com.intellij.ide.util.TipDialog" timestamp="1584898239194">
+    <state x="463" y="118" key="FileChooserDialogImpl" timestamp="1584943424411">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="378" y="187" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1584898239194" />
-    <state x="339" y="17" width="670" height="676" key="search.everywhere.popup" timestamp="1584876256416">
+    <state x="463" y="118" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1584943424411" />
+    <state x="378" y="187" key="com.intellij.ide.util.TipDialog" timestamp="1584935435821">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="339" y="17" width="670" height="676" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1584876256416" />
+    <state x="378" y="187" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1584935435821" />
+    <state x="339" y="17" width="670" height="676" key="search.everywhere.popup" timestamp="1584940986033">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="339" y="17" width="670" height="676" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1584940986033" />
   </component>
 </project>

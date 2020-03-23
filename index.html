@@ -27,7 +27,7 @@
 	<link href="css/vendors.css" rel="stylesheet">
 
     <!-- YOUR CUSTOM CSS -->
-    <link href="css/custom.css" rel="stylesheet">
+    <!--<link href="css/custom.css" rel="stylesheet">-->
 	
 	<!-- MODERNIZR MENU -->
 	<script src="js/modernizr.js"></script>
@@ -56,9 +56,15 @@
 	</nav>-->
 	<!-- /menu -->
 	
-	<div class="container-fluid full-height">
+	<div class="container-fluid">
+		<!--<div class="row">
+			<div class="col-lg-6 text-center col-md-offset-2">
+				<div id="result-display">
+
+				</div>
+			</div>
+		</div>-->
 		<div class="row row-height">
-			
 			<div class="col-lg-12 content-right" id="start">
 				<div id="wizard_container">
 					<div id="top-wizard">
@@ -88,36 +94,35 @@
 									<h3 class="main_question"><strong>2/5</strong>Select your age range?</h3>
 									<div class="form-group">
 										<label class="container_radio version_2">70+
-											<input type="radio" name="age" value="5" class="required">
+											<input type="radio" name="age" value="5" class="required age">
 											<span class="checkmark"></span>
 										</label>
 									</div>
 									<div class="form-group">
 										<label class="container_radio version_2">60-69
-											<input type="radio" name="age" value="4" class="required">
+											<input type="radio" name="age" value="4" class="required age">
 											<span class="checkmark"></span>
 										</label>
 									</div>
 									<div class="form-group">
 										<label class="container_radio version_2">50-59
-											<input type="radio" name="age" value="3" class="required">
+											<input type="radio" name="age" value="3" class="required age">
 											<span class="checkmark"></span>
 										</label>
 									</div>
 									<div class="form-group">
 										<label class="container_radio version_2">35-49
-											<input type="radio" name="age" value="1" class="required">
+											<input type="radio" name="age" value="1" class="required age">
 											<span class="checkmark"></span>
 										</label>
 									</div>
 									<div class="form-group">
 										<label class="container_radio version_2">1-35
-											<input type="radio" name="age" value="0.5" class="required">
+											<input type="radio" name="age" value="0.5" class="required age">
 											<span class="checkmark"></span>
 										</label>
 									</div>
 								</div>
-
 								<div id="3" class="step">
 									<h3 class="main_question"><strong>3/5</strong> What are your symptoms?</h3>
 									<div class="form-group">
@@ -148,7 +153,6 @@
 										</label>
 									</div>
 								</div>
-
 								<div id="4" class="step">
 									<h3 class="main_question"><strong>4/5</strong> Do you have any of these additional symptom?</h3>
 									<div class="form-group">
@@ -185,99 +189,14 @@
 										</label>
 									</div>
 								</div>
-
-								<!--<div id="5" class="step symptoms-days">
-									<h3 class="main_question"><strong>5/5</strong>How many days have you had these symptoms?</h3>
-									<div class="form-group">
-										<label class="container_radio version_2">Day 1-4
-											<input type="radio" name="symptoms_duration" value="0.5" class="required">
-											<span class="checkmark"></span>
-										</label>
-									</div>
-									<div class="form-group">
-										<label class="container_radio version_2">Day 5-7
-											<input type="radio" name="symptoms_duration" value="1" class="required">
-											<span class="checkmark"></span>
-										</label>
-									</div>
-									<div class="form-group">
-										<label class="container_radio version_2">Day 8+
-											<input type="radio" name="symptoms_duration" value="2" class="required">
-											<span class="checkmark"></span>
-										</label>
-									</div>
-								</div>-->
-
 								<div id="6" class="step pre-existing-condition">
-									<!--<h3 class="main_question"><strong>6/6</strong>Do You Have Any Pre-Existing Conditions?</h3>
-									<div class="form-group">
-										<label class="container_check version_2">Do you smoke?
-											<input type="checkbox" name="pre_existing_condition" value="0.35" class="required">
-											<span class="checkmark"></span>
-										</label>
-									</div>
-									<div class="form-group">
-										<label class="container_check version_2">Do you have diabetes?
-											<input type="checkbox" name="pre_existing_condition" value="0.75" class="required">
-											<span class="checkmark"></span>
-										</label>
-									</div>
-									<div class="form-group">
-										<label class="container_check version_2">Do you have hypertension?
-											<input type="checkbox" name="pre_existing_condition" value="1.5" class="required">
-											<span class="checkmark"></span>
-										</label>
-									</div>
-									<div class="form-group">
-										<label class="container_check version_2">Are you overweight or obese?
-											<input type="checkbox" name="pre_existing_condition" value="0.35" class="required">
-											<span class="checkmark"></span>
-										</label>
-									</div>
-									<div class="form-group">
-										<label class="container_check version_2">Do you have a previous history of heart attack or any other heart conditions?
-											<input type="checkbox" name="pre_existing_condition" value="1" class="required">
-											<span class="checkmark"></span>
-										</label>
-									</div>
-									<div class="form-group">
-										<label class="container_check version_2">Do you have a history of liver conditions?
-											<input type="checkbox" name="pre_existing_condition" value="0.65" class="required">
-											<span class="checkmark"></span>
-										</label>
-									</div>
-									<div class="form-group">
-										<label class="container_check version_2">Do you have any kidney diseases?
-											<input type="checkbox" name="pre_existing_condition" value="0.5" class="required">
-											<span class="checkmark"></span>
-										</label>
-									</div>
-									<div class="form-group">
-										<label class="container_check version_2">Did you have any organ/bone marrow transplant?
-											<input type="checkbox" name="pre_existing_condition" value="3" class="required">
-											<span class="checkmark"></span>
-										</label>
-									</div>
-									<div class="form-group">
-										<label class="container_check version_2">Are you pregnant?
-											<input type="checkbox" name="pre_existing_condition" value="1" class="required">
-											<span class="checkmark"></span>
-										</label>
-									</div>
-									<div class="form-group">
-										<label class="container_check version_2">None of the above?
-											<input type="checkbox" name="pre_existing_condition" value="0" class="required">
-											<span class="checkmark"></span>
-										</label>
-									</div>-->
 								</div>
-
 							</div>
 							<!-- /middle-wizard -->
 							<div id="bottom-wizard">
-								<button type="button" name="backward" class="backward">Prev</button>
+								<button type="button" name="backward" class="backward" onclick="active_deactive(0)">Prev</button>
 								<button type="button" name="forward" class="forward" onclick="get_step_id()">Next</button>
-								<button type="submit" name="process" class="submit">Submit</button>
+								<button type="button" style="display: none" name="process" onclick="submit_survey()" class="submit">Submit</button>
 							</div>
 							<!-- /bottom-wizard -->
 						</form>
@@ -338,64 +257,64 @@
 	<script>
 		var symptom_page_one = '';
 		var symptom_page_two = '';
-		var pre_existing = '<h3 class="main_question"><strong>6/6</strong>Do You Have Any Pre-Existing Conditions?</h3>\n' +
+		var pre_existing = '<h3 class="main_question"><strong>5/5</strong>Do You Have Any Pre-Existing Conditions?</h3>\n' +
 				'\t\t\t\t\t\t\t\t\t<div class="form-group">\n' +
 				'\t\t\t\t\t\t\t\t\t\t<label class="container_check version_2">Do you smoke?\n' +
-				'\t\t\t\t\t\t\t\t\t\t\t<input type="checkbox" name="pre_existing_condition" value="0.35" class="required">\n' +
+				'\t\t\t\t\t\t\t\t\t\t\t<input type="checkbox" onchange="pre_existing_condition()" name="pre_existing_condition[]" value="0.35" class="required pre_existing_condition">\n' +
 				'\t\t\t\t\t\t\t\t\t\t\t<span class="checkmark"></span>\n' +
 				'\t\t\t\t\t\t\t\t\t\t</label>\n' +
 				'\t\t\t\t\t\t\t\t\t</div>\n' +
 				'\t\t\t\t\t\t\t\t\t<div class="form-group">\n' +
 				'\t\t\t\t\t\t\t\t\t\t<label class="container_check version_2">Do you have diabetes?\n' +
-				'\t\t\t\t\t\t\t\t\t\t\t<input type="checkbox" name="pre_existing_condition" value="0.75" class="required">\n' +
+				'\t\t\t\t\t\t\t\t\t\t\t<input type="checkbox" onchange="pre_existing_condition()" name="pre_existing_condition[]" value="0.75" class="required pre_existing_condition">\n' +
 				'\t\t\t\t\t\t\t\t\t\t\t<span class="checkmark"></span>\n' +
 				'\t\t\t\t\t\t\t\t\t\t</label>\n' +
 				'\t\t\t\t\t\t\t\t\t</div>\n' +
 				'\t\t\t\t\t\t\t\t\t<div class="form-group">\n' +
 				'\t\t\t\t\t\t\t\t\t\t<label class="container_check version_2">Do you have hypertension?\n' +
-				'\t\t\t\t\t\t\t\t\t\t\t<input type="checkbox" name="pre_existing_condition" value="1.5" class="required">\n' +
+				'\t\t\t\t\t\t\t\t\t\t\t<input type="checkbox" onchange="pre_existing_condition()" name="pre_existing_condition[]" value="1.5" class="required pre_existing_condition">\n' +
 				'\t\t\t\t\t\t\t\t\t\t\t<span class="checkmark"></span>\n' +
 				'\t\t\t\t\t\t\t\t\t\t</label>\n' +
 				'\t\t\t\t\t\t\t\t\t</div>\n' +
 				'\t\t\t\t\t\t\t\t\t<div class="form-group">\n' +
 				'\t\t\t\t\t\t\t\t\t\t<label class="container_check version_2">Are you overweight or obese?\n' +
-				'\t\t\t\t\t\t\t\t\t\t\t<input type="checkbox" name="pre_existing_condition" value="0.35" class="required">\n' +
+				'\t\t\t\t\t\t\t\t\t\t\t<input type="checkbox" onchange="pre_existing_condition()" name="pre_existing_condition[]" value="0.35" class="required pre_existing_condition">\n' +
 				'\t\t\t\t\t\t\t\t\t\t\t<span class="checkmark"></span>\n' +
 				'\t\t\t\t\t\t\t\t\t\t</label>\n' +
 				'\t\t\t\t\t\t\t\t\t</div>\n' +
 				'\t\t\t\t\t\t\t\t\t<div class="form-group">\n' +
 				'\t\t\t\t\t\t\t\t\t\t<label class="container_check version_2">Do you have a previous history of heart attack or any other heart conditions?\n' +
-				'\t\t\t\t\t\t\t\t\t\t\t<input type="checkbox" name="pre_existing_condition" value="1" class="required">\n' +
+				'\t\t\t\t\t\t\t\t\t\t\t<input type="checkbox" onchange="pre_existing_condition()" name="pre_existing_condition[]" value="1" class="required pre_existing_condition">\n' +
 				'\t\t\t\t\t\t\t\t\t\t\t<span class="checkmark"></span>\n' +
 				'\t\t\t\t\t\t\t\t\t\t</label>\n' +
 				'\t\t\t\t\t\t\t\t\t</div>\n' +
 				'\t\t\t\t\t\t\t\t\t<div class="form-group">\n' +
 				'\t\t\t\t\t\t\t\t\t\t<label class="container_check version_2">Do you have a history of liver conditions?\n' +
-				'\t\t\t\t\t\t\t\t\t\t\t<input type="checkbox" name="pre_existing_condition" value="0.65" class="required">\n' +
+				'\t\t\t\t\t\t\t\t\t\t\t<input type="checkbox" name="pre_existing_condition[]" value="0.65" class="required pre_existing_condition">\n' +
 				'\t\t\t\t\t\t\t\t\t\t\t<span class="checkmark"></span>\n' +
 				'\t\t\t\t\t\t\t\t\t\t</label>\n' +
 				'\t\t\t\t\t\t\t\t\t</div>\n' +
 				'\t\t\t\t\t\t\t\t\t<div class="form-group">\n' +
 				'\t\t\t\t\t\t\t\t\t\t<label class="container_check version_2">Do you have any kidney diseases?\n' +
-				'\t\t\t\t\t\t\t\t\t\t\t<input type="checkbox" name="pre_existing_condition" value="0.5" class="required">\n' +
+				'\t\t\t\t\t\t\t\t\t\t\t<input type="checkbox" onchange="pre_existing_condition()" name="pre_existing_condition[]" value="0.5" class="required pre_existing_condition">\n' +
 				'\t\t\t\t\t\t\t\t\t\t\t<span class="checkmark"></span>\n' +
 				'\t\t\t\t\t\t\t\t\t\t</label>\n' +
 				'\t\t\t\t\t\t\t\t\t</div>\n' +
 				'\t\t\t\t\t\t\t\t\t<div class="form-group">\n' +
 				'\t\t\t\t\t\t\t\t\t\t<label class="container_check version_2">Did you have any organ/bone marrow transplant?\n' +
-				'\t\t\t\t\t\t\t\t\t\t\t<input type="checkbox" name="pre_existing_condition" value="3" class="required">\n' +
+				'\t\t\t\t\t\t\t\t\t\t\t<input type="checkbox" onchange="pre_existing_condition()" name="pre_existing_condition[]" value="3" class="required pre_existing_condition">\n' +
 				'\t\t\t\t\t\t\t\t\t\t\t<span class="checkmark"></span>\n' +
 				'\t\t\t\t\t\t\t\t\t\t</label>\n' +
 				'\t\t\t\t\t\t\t\t\t</div>\n' +
 				'\t\t\t\t\t\t\t\t\t<div class="form-group">\n' +
 				'\t\t\t\t\t\t\t\t\t\t<label class="container_check version_2">Are you pregnant?\n' +
-				'\t\t\t\t\t\t\t\t\t\t\t<input type="checkbox" name="pre_existing_condition" value="1" class="required">\n' +
+				'\t\t\t\t\t\t\t\t\t\t\t<input type="checkbox" onchange="pre_existing_condition()" name="pre_existing_condition[]" value="1" class="required pre_existing_condition">\n' +
 				'\t\t\t\t\t\t\t\t\t\t\t<span class="checkmark"></span>\n' +
 				'\t\t\t\t\t\t\t\t\t\t</label>\n' +
 				'\t\t\t\t\t\t\t\t\t</div>\n' +
 				'\t\t\t\t\t\t\t\t\t<div class="form-group">\n' +
 				'\t\t\t\t\t\t\t\t\t\t<label class="container_check version_2">None of the above?\n' +
-				'\t\t\t\t\t\t\t\t\t\t\t<input type="checkbox" name="pre_existing_condition" value="0" class="required">\n' +
+				'\t\t\t\t\t\t\t\t\t\t\t<input type="checkbox" onchange="pre_existing_condition()" name="pre_existing_condition[]" value="0" class="required pre_existing_condition">\n' +
 				'\t\t\t\t\t\t\t\t\t\t\t<span class="checkmark"></span>\n' +
 				'\t\t\t\t\t\t\t\t\t\t</label>\n' +
 				'\t\t\t\t\t\t\t\t\t</div>';
@@ -403,24 +322,27 @@
 		var symptoms_days = '<h3 class="main_question"><strong>5/5</strong>How many days have you had these symptoms?</h3>\n' +
 				'\t\t\t\t\t\t\t\t\t<div class="form-group">\n' +
 				'\t\t\t\t\t\t\t\t\t\t<label class="container_radio version_2">Day 1-4\n' +
-				'\t\t\t\t\t\t\t\t\t\t\t<input type="radio" name="symptoms_duration" value="0.5" class="required">\n' +
+				'\t\t\t\t\t\t\t\t\t\t\t<input type="radio" name="symptoms_duration" value="0.5"  onchange="symptoms_day()" class="required symptoms">\n' +
 				'\t\t\t\t\t\t\t\t\t\t\t<span class="checkmark"></span>\n' +
 				'\t\t\t\t\t\t\t\t\t\t</label>\n' +
 				'\t\t\t\t\t\t\t\t\t</div>\n' +
 				'\t\t\t\t\t\t\t\t\t<div class="form-group">\n' +
 				'\t\t\t\t\t\t\t\t\t\t<label class="container_radio version_2">Day 5-7\n' +
-				'\t\t\t\t\t\t\t\t\t\t\t<input type="radio" name="symptoms_duration" value="1" class="required">\n' +
+				'\t\t\t\t\t\t\t\t\t\t\t<input type="radio" name="symptoms_duration" value="1" onchange="symptoms_day()" class="required symptoms">\n' +
 				'\t\t\t\t\t\t\t\t\t\t\t<span class="checkmark"></span>\n' +
 				'\t\t\t\t\t\t\t\t\t\t</label>\n' +
 				'\t\t\t\t\t\t\t\t\t</div>\n' +
 				'\t\t\t\t\t\t\t\t\t<div class="form-group">\n' +
 				'\t\t\t\t\t\t\t\t\t\t<label class="container_radio version_2">Day 8+\n' +
-				'\t\t\t\t\t\t\t\t\t\t\t<input type="radio" name="symptoms_duration" value="2" class="required">\n' +
+				'\t\t\t\t\t\t\t\t\t\t\t<input type="radio" name="symptoms_duration" value="2"  onchange="symptoms_day()" class="required symptoms">\n' +
 				'\t\t\t\t\t\t\t\t\t\t\t<span class="checkmark"></span>\n' +
 				'\t\t\t\t\t\t\t\t\t\t</label>\n' +
 				'\t\t\t\t\t\t\t\t\t</div>';
 
 		function get_step_id(){
+
+			active_deactive(0);
+
 			var id  = $(".step.current").attr('id');
 			var age = '';
 			if (id == 3){
@@ -435,11 +357,12 @@
 				}).get();
 
 				if ((symptom_page_one[0] == 0) && (symptom_page_two[0] == 0) ){
-					console.log('condis');
-					$(".pre-existing-condition").html(pre_existing);
 
+					$(".pre-existing-condition").html(pre_existing);
+					//$("#bottom-wizard button.submit").css('display','block');
 				}else{
 					$(".pre-existing-condition").html(symptoms_days);
+					//$("#bottom-wizard button.submit").css('display','block');
 				}
 			}
 
@@ -460,6 +383,111 @@
 				$(".symptom_page_two_zero").prop('checked',false);
 			}
 		});
+
+		$('input[name="pre_existing_condition"]').on('change', function(event) {
+			$("#bottom-wizard button.submit").css('display','block');
+		});
+
+		function symptoms_day(){
+			active_deactive(1);
+		}
+
+		function pre_existing_condition(){
+			active_deactive(1);
+		}
+
+		function active_deactive(value){
+			if (value == 1){
+				$("#bottom-wizard button.submit").css('display','block');
+				$("#bottom-wizard button.submit").attr('disabled',false);
+			}else {
+				$("#bottom-wizard button.submit").css('display','none');
+			}
+
+		}
+
+		async function submit_survey(){
+			var age = $(".age").val();
+			var symptoms_one = $('input[name="symptom_page_one[]"]:checked').map(function () {
+				return this.value; // $(this).val()
+			}).get();
+
+			var symptoms_two = $('input[name="symptom_page_two[]"]:checked').map(function () {
+				return this.value; // $(this).val()
+			}).get();
+
+			var pre_existing_condition = $('input[name="pre_existing_condition[]"]:checked').map(function () {
+				return this.value; // $(this).val()
+			}).get();
+
+			var symptoms_days = $(".symptoms").val();
+
+			var sum_symptoms_one = 0;
+			var sum_symptoms_two = 0;
+			var sum_pre_existing_condition = 0;
+
+			for (var i = 0; i<symptoms_one.length; i++){
+				sum_symptoms_one = sum_symptoms_one + Number(symptoms_one[i]);
+			}
+
+			for (var i = 0; i<symptoms_two.length; i++){
+				sum_symptoms_two = sum_symptoms_two + Number(symptoms_two[i]);
+			}
+			for (var i = 0; i<pre_existing_condition.length; i++){
+				sum_pre_existing_condition = sum_pre_existing_condition + Number(pre_existing_condition[i]);
+			}
+
+			var calculate_seventy = 0;
+			var calculate_thirty = 0;
+			if (symptoms_days == null || symptoms_days == undefined || symptoms_days == ''){
+				calculate_seventy = Number(age) * 0.7;
+				calculate_thirty = sum_pre_existing_condition * 0.3;
+			}else{
+				calculate_seventy = (Number(age) + sum_symptoms_one + sum_symptoms_two + Number(symptoms_days))*0.7;
+			}
+
+			var total = calculate_seventy + calculate_thirty;
+
+			if (total >= 6){
+				var high = ' <div class="alert alert-danger">\n' +
+						'   We recommend you seek medical attention based on your responses - ' +
+						'please press Doctor Consultation Below if you would like to speak to a Sajida Doctor.\n' +
+						'  </div>';
+				var placeHolder = '<div class="well"> Lorem ipsum, or lipsum as it is sometimes known,' +
+						' is dummy text used in laying out print, graphic or web designs. The passage ' +
+						'is attributed to an unknown typesetter in the 15th century who is thought to have scrambled parts of Cicero\'s' +
+						' De Finibus Bonorum et Malorum for use in a type specimen book.</div>';
+				//high = high + placeHolder;
+				$("#wizard_container").html(high);
+			}else if(total >= 4.4 && total <= 5.99){
+				var medium = '<div class="alert alert-warning">\n' +
+						'Your symptoms at this moment do not seem to require ' +
+						'immediate medical attention. However, if your symptoms worsen in the next few days and you ' +
+						'develop any of the following: 1)Extreme difficulty in breathing 2) Chest pain and pressure 3) Extreme Drowsiness, ' +
+						'Sudden Dizziness and Losing consciousness, please come back to us or consult a doctor..\n' +
+						'  </div>';
+				var placeHolder = '<div class="well"> Lorem ipsum, or lipsum as it is sometimes known,' +
+						' is dummy text used in laying out print, graphic or web designs. The passage ' +
+						'is attributed to an unknown typesetter in the 15th century who is thought to have scrambled parts of Cicero\'s' +
+						' De Finibus Bonorum et Malorum for use in a type specimen book.</div>';
+				//medium = medium + placeHolder;
+				$("#wizard_container").html(medium);
+			}else{
+				var low = '<div class="alert alert-info">\n' +
+						'Currently your symptoms do not seem to ' +
+						'require immediate medical attention. IT IS HOWEVER VERY IMPORTANT that you' +
+						' stay indoors for at least 14 days and consult our “protect yourself”' +
+						' page to see how to properly sanitize yourself and your home.\n' +
+						'  </div>';
+				var placeHolder = '<div class="well">Lorem ipsum, or lipsum as it is sometimes known,' +
+						' is dummy text used in laying out print, graphic or web designs. The passage ' +
+						'is attributed to an unknown typesetter in the 15th century who is thought to have scrambled parts of Cicero\'s' +
+						' De Finibus Bonorum et Malorum for use in a type specimen book.</div>';
+				//low = low + placeHolder;
+				$("#wizard_container").html(low);
+			}
+
+		}
 
 	</script>
 
