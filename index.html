@@ -71,20 +71,58 @@
 			<div class="col-lg-12 content-right" id="start">
 				<div id="wizard_container">
 					<!--<div class="result-area">
-						<h5 class="text-center" style="color: #5dd816">Low Risk</h5>
-						<p class="" style="font-size: 15px; font-weight: bold; text-align: left">
+						<p class="" style="font-size: 18px; font-weight: bold; text-align: left; color:darkgreen">
 							Currently your symptoms do not seem to require immediate medical attention.
 							IT IS HOWEVER VERY IMPORTANT that you stay indoors for at least 14 days and
 							consult our “protect yourself” page to see how to properly sanitize yourself and your home.
 						</p>
 						<p style="font-size: 15px;"><b>Remember:</b></p>
 						<ul>
-							<li><p>It is important to follow good hygiene practices; wash your
+							<li><p style="font-weight: bold; color: black">It is important to follow good hygiene practices; wash your
 								hands for 20-30 secs with soap or use sanitizer often throughout the day.</p></li>
-							<li><p>Ensure use of tissue or cover your mouth when sneezing/coughing.
-								Remember this disease spreads by tiny droplets from sneeze/ cough</p></li>
+							<li><p style="font-weight: bold; color: black">Ensure use of tissue or cover your mouth when sneezing/coughing.
+								Remember this disease spreads by tiny droplets from sneeze/ cough.</p></li>
+							<li><p style="font-weight: bold; color: black">Only step outside if it’s important and if you do, wear a mask.</p></li>
+							<li><p style="font-weight: bold; color: black">Practise social distancing, especially from elderly people and
+								others with pre-existing illnesse.</p></li>
+							<li><p style="font-weight: bold; color: black">If your symptoms progressively get worse, you can come back to us or
+								consult a doctor if you have access to them.</p></li>
+							<li><p style="font-weight: bold; color: black">If you face difficulty breathing, experience sudden dizziness and feel pressure/pain
+								in your chest, consult a doctor or call the IEDCR hotline.</p></li>
 						</ul>
 					</div>-->
+					<!--<div class="result-area">
+						<p class="" style="font-size: 15px; font-weight: bold; text-align: left; color: #1155cc">
+							Your symptoms at this moment do not seem to require immediate medical attention.
+						</p>
+						<p style="font-size: 15px; color: #1155cc"><b>However, if your symptoms worsen in the next few days and you develop any of the following:</b></p>
+						<ul style="color: #1155cc; list-style: circle; margin: 0;">
+							<li><p style="font-weight: bold">Extreme difficulty in breathing</p></li>
+							<li><p style="font-weight: bold">Chest pain and pressure</p></li>
+							<li><p style="font-weight: bold">Extreme Drowsiness, Sudden Dizziness and Losing consciousness</p></li>
+						</ul>
+						<p style="font-size: 15px; color: #1155cc"><b>Please come back to us or consult a doctor immediately.</b></p>
+
+						<p style="font-size: 15px; color: black"><b>Meanwhile it is important to remember to:</b></p>
+						<ul>
+							<li><p style="font-weight: bold; color: black">Strictly maintain disinfection throughout the day;
+								wash your hands with soap for 20-30 secs or use hand sanitise.</p></li>
+							<li><p style="font-weight: bold; color: black">Disinfect surfaces that are regularly touched around you</p></li>
+							<li><p style="font-weight: bold; color: black">Only step outside if it’s important and if you do, wear a mask.</p></li>
+							<li><p style="font-weight: bold; color: black">Ensure you use a tissue or cover your face when coughing/sneezing.
+								Remember, this disease spreads by tiny droplets from sneezes/coughs.</p></li>
+							<li><p style="font-weight: bold; color: black">Only step outside if it’s an emergency
+								and try to work from home. If you must step outside, wear a mask</p></li>
+						</ul>
+					</div>-->
+
+					<!--<div class="result-area">
+						<p class="" style="font-size: 18px; font-weight: bold; text-align: left; color: red">
+							We recommend you seek immediate medical attention - please press “Doctor Consultation Below” to connect with a doctor.
+							You can also choose to contact IEDCR or another doctor if you have access to them
+						</p>
+					</div>-->
+
 					<div id="top-wizard">
 							<div id="progressbar"></div>
 						</div>
@@ -560,40 +598,65 @@
 			var total = calculate_seventy + calculate_thirty;
 
 			if (total >= 6){
-				var high = ' <div class="alert alert-danger">\n' +
-						'   We recommend you seek medical attention based on your responses - ' +
-						'please press Doctor Consultation Below if you would like to speak to a Sajida Doctor.\n' +
-						'  </div>';
-				var placeHolder = '<div class="well"> Lorem ipsum, or lipsum as it is sometimes known,' +
-						' is dummy text used in laying out print, graphic or web designs. The passage ' +
-						'is attributed to an unknown typesetter in the 15th century who is thought to have scrambled parts of Cicero\'s' +
-						' De Finibus Bonorum et Malorum for use in a type specimen book.</div>';
+				var high = '<div class="result-area">\n' +
+						'\t\t\t\t\t\t<p class="" style="font-size: 18px; font-weight: bold; text-align: left; color: red">\n' +
+						'\t\t\t\t\t\t\tWe recommend you seek immediate medical attention - please press “Doctor Consultation Below” to connect with a doctor.\n' +
+						'\t\t\t\t\t\t\tYou can also choose to contact IEDCR or another doctor if you have access to them\n' +
+						'\t\t\t\t\t\t</p>\n' +
+						'\t\t\t\t\t</div>';
+
 				//high = high + placeHolder;
 				$("#wizard_container").html(high);
 			}else if(total >= 4.4 && total <= 5.99){
-				var medium = '<div class="alert alert-warning">\n' +
-						'Your symptoms at this moment do not seem to require ' +
-						'immediate medical attention. However, if your symptoms worsen in the next few days and you ' +
-						'develop any of the following: 1)Extreme difficulty in breathing 2) Chest pain and pressure 3) Extreme Drowsiness, ' +
-						'Sudden Dizziness and Losing consciousness, please come back to us or consult a doctor..\n' +
-						'  </div>';
-				var placeHolder = '<div class="well"> Lorem ipsum, or lipsum as it is sometimes known,' +
-						' is dummy text used in laying out print, graphic or web designs. The passage ' +
-						'is attributed to an unknown typesetter in the 15th century who is thought to have scrambled parts of Cicero\'s' +
-						' De Finibus Bonorum et Malorum for use in a type specimen book.</div>';
-				//medium = medium + placeHolder;
+				var medium = '<div class="result-area">\n' +
+						'\t\t\t\t\t\t<p class="" style="font-size: 15px; font-weight: bold; text-align: left; color: #1155cc">\n' +
+						'\t\t\t\t\t\t\tYour symptoms at this moment do not seem to require immediate medical attention.\n' +
+						'\t\t\t\t\t\t</p>\n' +
+						'\t\t\t\t\t\t<p style="font-size: 15px; color: #1155cc"><b>However, if your symptoms worsen in the next few days and you develop any of the following:</b></p>\n' +
+						'\t\t\t\t\t\t<ul style="color: #1155cc; list-style: circle; margin: 0;">\n' +
+						'\t\t\t\t\t\t\t<li><p style="font-weight: bold">Extreme difficulty in breathing</p></li>\n' +
+						'\t\t\t\t\t\t\t<li><p style="font-weight: bold">Chest pain and pressure</p></li>\n' +
+						'\t\t\t\t\t\t\t<li><p style="font-weight: bold">Extreme Drowsiness, Sudden Dizziness and Losing consciousness</p></li>\n' +
+						'\t\t\t\t\t\t</ul>\n' +
+						'\t\t\t\t\t\t<p style="font-size: 15px; color: #1155cc"><b>Please come back to us or consult a doctor immediately.</b></p>\n' +
+						'\n' +
+						'\t\t\t\t\t\t<p style="font-size: 15px; color: black"><b>Meanwhile it is important to remember to:</b></p>\n' +
+						'\t\t\t\t\t\t<ul>\n' +
+						'\t\t\t\t\t\t\t<li><p style="font-weight: bold; color: black">Strictly maintain disinfection throughout the day;\n' +
+						'\t\t\t\t\t\t\t\twash your hands with soap for 20-30 secs or use hand sanitise.</p></li>\n' +
+						'\t\t\t\t\t\t\t<li><p style="font-weight: bold; color: black">Disinfect surfaces that are regularly touched around you</p></li>\n' +
+						'\t\t\t\t\t\t\t<li><p style="font-weight: bold; color: black">Only step outside if it’s important and if you do, wear a mask.</p></li>\n' +
+						'\t\t\t\t\t\t\t<li><p style="font-weight: bold; color: black">Ensure you use a tissue or cover your face when coughing/sneezing.\n' +
+						'\t\t\t\t\t\t\t\tRemember, this disease spreads by tiny droplets from sneezes/coughs.</p></li>\n' +
+						'\t\t\t\t\t\t\t<li><p style="font-weight: bold; color: black">Only step outside if it’s an emergency\n' +
+						'\t\t\t\t\t\t\t\tand try to work from home. If you must step outside, wear a mask</p></li>\n' +
+						'\t\t\t\t\t\t</ul>\n' +
+						'\t\t\t\t\t</div>';
+
 				$("#wizard_container").html(medium);
 			}else{
-				var low = '<div class="alert alert-info">\n' +
-						'Currently your symptoms do not seem to ' +
-						'require immediate medical attention. IT IS HOWEVER VERY IMPORTANT that you' +
-						' stay indoors for at least 14 days and consult our “protect yourself”' +
-						' page to see how to properly sanitize yourself and your home.\n' +
-						'  </div>';
-				var placeHolder = '<div class="well">Lorem ipsum, or lipsum as it is sometimes known,' +
-						' is dummy text used in laying out print, graphic or web designs. The passage ' +
-						'is attributed to an unknown typesetter in the 15th century who is thought to have scrambled parts of Cicero\'s' +
-						' De Finibus Bonorum et Malorum for use in a type specimen book.</div>';
+				var low = '<div class="result-area">\n' +
+						'\t\t\t\t\t\t<p class="" style="font-size: 18px; font-weight: bold; text-align: left; color:darkgreen">\n' +
+						'\t\t\t\t\t\t\tCurrently your symptoms do not seem to require immediate medical attention.\n' +
+						'\t\t\t\t\t\t\tIT IS HOWEVER VERY IMPORTANT that you stay indoors for at least 14 days and\n' +
+						'\t\t\t\t\t\t\tconsult our “protect yourself” page to see how to properly sanitize yourself and your home.\n' +
+						'\t\t\t\t\t\t</p>\n' +
+						'\t\t\t\t\t\t<p style="font-size: 15px;"><b>Remember:</b></p>\n' +
+						'\t\t\t\t\t\t<ul>\n' +
+						'\t\t\t\t\t\t\t<li><p style="font-weight: bold; color: black">It is important to follow good hygiene practices; wash your\n' +
+						'\t\t\t\t\t\t\t\thands for 20-30 secs with soap or use sanitizer often throughout the day.</p></li>\n' +
+						'\t\t\t\t\t\t\t<li><p style="font-weight: bold; color: black">Ensure use of tissue or cover your mouth when sneezing/coughing.\n' +
+						'\t\t\t\t\t\t\t\tRemember this disease spreads by tiny droplets from sneeze/ cough.</p></li>\n' +
+						'\t\t\t\t\t\t\t<li><p style="font-weight: bold; color: black">Only step outside if it’s important and if you do, wear a mask.</p></li>\n' +
+						'\t\t\t\t\t\t\t<li><p style="font-weight: bold; color: black">Practise social distancing, especially from elderly people and\n' +
+						'\t\t\t\t\t\t\t\tothers with pre-existing illnesse.</p></li>\n' +
+						'\t\t\t\t\t\t\t<li><p style="font-weight: bold; color: black">If your symptoms progressively get worse, you can come back to us or\n' +
+						'\t\t\t\t\t\t\t\tconsult a doctor if you have access to them.</p></li>\n' +
+						'\t\t\t\t\t\t\t<li><p style="font-weight: bold; color: black">If you face difficulty breathing, experience sudden dizziness and feel pressure/pain\n' +
+						'\t\t\t\t\t\t\t\tin your chest, consult a doctor or call the IEDCR hotline.</p></li>\n' +
+						'\t\t\t\t\t\t</ul>\n' +
+						'\t\t\t\t\t</div>';
+
 				//low = low + placeHolder;
 				$("#wizard_container").html(low);
 			}
