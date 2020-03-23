@@ -414,10 +414,10 @@ a.btn_1.rounded,
 }
 
 .content-right {
-    padding: 60px;
+    padding: 30px;
     height: 100%;
     min-height: 100%;
-    overflow-y: scroll;
+    /*overflow-y: scroll;*/
     display: flex;
     justify-content: center;
     align-items: center
@@ -604,7 +604,7 @@ button[disabled] {
 }
 
 #middle-wizard {
-    min-height: 330px
+    min-height: 100px
 }
 
 @media (max-width: 991px) {
@@ -821,18 +821,21 @@ header #social ul li a {
 
 footer {
     border-top: 1px solid #ededed;
-    padding: 30px 0
+    background: #ededed;
+    padding-bottom: 1%;
 }
 
 footer p {
-    margin: 0;
-    padding: 0;
-    float: right
+    font-size: 10px;
+    width: 50%;
+    display: inline-flex;
 }
 
 @media (max-width: 991px) {
     footer p {
-        float: none
+        font-size: 10px;
+        width: 100%;
+        display: inline-flex;
     }
 }
 
@@ -846,6 +849,11 @@ footer ul {
     footer ul {
         float: none;
         margin-top: 10px
+    }
+
+    .footer-bottom-develop > span > img{
+        width: 50%;
+        height: 50%;
     }
 }
 
@@ -895,6 +903,22 @@ footer ul li a:hover {
     .main_title h2 {
         font-size: 32px;
         font-size: 2rem
+    }
+
+    footer p {
+        font-size: 10px;
+        width: 100%;
+        display: inline-flex;
+    }
+
+    .footer-bottom-develop > span > img{
+        width: 50%;
+        height: 50%;
+    }
+
+    .top-logo > img{
+        height: auto;
+        width: 50%;
     }
 }
 

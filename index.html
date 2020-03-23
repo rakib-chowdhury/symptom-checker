@@ -64,19 +64,11 @@
 				</div>
 			</div>
 		</div>-->
-		<div class="row row-height">
-			<div class="col-lg-6 content-left">
-				<div class="content-left-wrapper">
-					<div>
-						<figure><img src="img/logo_2.png" width="50%" alt="" class="img-fluid"></figure>
-						<!--<h2>Welcome to Symptom Checker</h2>-->
-						<p>Developed by <a href="https://appinionbd.com/" style="color: red; font-weight: bolder" target="_blank">Appinion</a> and created by young scientists and doctors at Renata Limited.</p>
-					</div>
-				</div>
-				<!-- /content-left-wrapper -->
+		<div class="row">
+			<div class="col-lg-12  text-center top-logo">
+				<img style="margin-top: 2%" src="img/logo_2.png" width="15%" height="15%" alt="" class="img-fluid">
 			</div>
-			<!-- /content-left -->
-			<div class="col-lg-6 content-right" id="start">
+			<div class="col-lg-12 content-right" id="start">
 				<div id="wizard_container">
 					<div id="top-wizard">
 							<div id="progressbar"></div>
@@ -86,13 +78,13 @@
 							<!-- Leave for security protection, read docs for details -->
 							<div id="middle-wizard">
 								<div id="1" class="step">
-									<h3 class="main_question"><strong>1/5</strong>Are you asking for yourself or someone else?</h3>
+									<h3 class="main_question"><strong>1/6</strong>Are you asking for yourself or someone else?</h3>
 									<div class="form-group radio_input">
 										<label class="container_radio">Yourself
 											<input type="radio" name="yes_no" value="yes" class="required" >
 											<span class="checkmark"></span>
 										</label>
-										<label class="container_radio">Others
+										<label class="container_radio">Someone else
 											<input type="radio" name="yes_no" value="no" class="required">
 											<span class="checkmark"></span>
 										</label>
@@ -100,7 +92,7 @@
 								</div>
 								<!-- /step-->
 								<div id="2" class="step">
-									<h3 class="main_question"><strong>2/5</strong>Select your age range?</h3>
+									<h3 class="main_question"><strong>2/6</strong>Select your age range?</h3>
 									<div class="form-group">
 										<label class="container_radio version_2">70+
 											<input type="radio" name="age" value="5" class="required age">
@@ -133,7 +125,7 @@
 									</div>
 								</div>
 								<div id="3" class="step">
-									<h3 class="main_question"><strong>3/5</strong> What are your symptoms?</h3>
+									<h3 class="main_question"><strong>3/6</strong> What are your symptoms?</h3>
 									<div class="form-group">
 										<label class="container_check version_2">Shortness of Breath
 											<input type="checkbox" name="symptom_page_one[]" value="2" class="required">
@@ -163,7 +155,7 @@
 									</div>
 								</div>
 								<div id="4" class="step">
-									<h3 class="main_question"><strong>4/5</strong> Do you have any of these additional symptom?</h3>
+									<h3 class="main_question"><strong>4/6</strong> Do you have any of these additional symptom?</h3>
 									<div class="form-group">
 										<label class="container_check version_2">Nausea
 											<input type="checkbox" name="symptom_page_two[]" value="0.65" class="required">
@@ -198,7 +190,9 @@
 										</label>
 									</div>
 								</div>
-								<div id="6" class="step pre-existing-condition">
+								<div id="5" class="step pre-existing-condition">
+								</div>
+								<div id="6" class="step pre-existing-condition_2">
 								</div>
 							</div>
 							<!-- /middle-wizard -->
@@ -215,6 +209,31 @@
 			<!-- /content-right-->
 		</div>
 		<!-- /row-->
+		<footer id="footer-bottom">
+			<div class="row">
+				<div class="col-lg-12 text-center">
+					<h6>Disclaimer for Symptom Checker</h6>
+					<p>This bot is not designed to, and does not, provide medical advice.
+						All content ("content"), including text, graphics, images and information
+						available on or through this bot are for general informational purposes only.
+						The content is not intended to be a substitute for professional medical advice,
+						diagnosis or treatment. Never disregard professional medical advice, or delay
+						in seeking it, because of something you have read on this bot. Never rely on
+						information on this bot in place of seeking professional medical advice.
+						Renata Limited is not responsible or liable for any advice, course of treatment,
+						diagnosis or any other information, services or products that you obtain through this bot.
+						You are encouraged to confer with your doctor with regard to information contained on or
+						through this bot. After reading information or other content from this bot,
+						you are encouraged to review the information carefully with your professional healthcare provider.</p>
+				</div>
+				<div class="col-lg-12 text-center footer-bottom-develop">
+					<span>
+						<img src="img/renata-logo-230width.png" width="10%" height="10%" alt="" class="img-fluid">
+					</span><br>
+					<span style="font-size: 10px;">Developed by Appinion and created by young scientists and doctors at Renata Limited.</span>
+				</div>
+			</div>
+		</footer>
 	</div>
 	<!-- /container-fluid -->
 
@@ -266,7 +285,7 @@
 	<script>
 		var symptom_page_one = '';
 		var symptom_page_two = '';
-		var pre_existing = '<h3 class="main_question"><strong>5/5</strong>Do You Have Any Pre-Existing Conditions?</h3>\n' +
+		var pre_existing = '<h3 class="main_question"><strong>5/6</strong>Do You Have Any Pre-Existing Conditions?</h3>\n' +
 				'\t\t\t\t\t\t\t\t\t<div class="form-group">\n' +
 				'\t\t\t\t\t\t\t\t\t\t<label class="container_check version_2">Do you smoke?\n' +
 				'\t\t\t\t\t\t\t\t\t\t\t<input type="checkbox" onchange="pre_existing_condition()" name="pre_existing_condition[]" value="0.35" class="required pre_existing_condition">\n' +
@@ -328,7 +347,69 @@
 				'\t\t\t\t\t\t\t\t\t\t</label>\n' +
 				'\t\t\t\t\t\t\t\t\t</div>';
 
-		var symptoms_days = '<h3 class="main_question"><strong>5/5</strong>How many days have you had these symptoms?</h3>\n' +
+		var pre_existing_2 = '<h3 class="main_question"><strong>6/6</strong>Do You Have Any Pre-Existing Conditions?</h3>\n' +
+				'\t\t\t\t\t\t\t\t\t<div class="form-group">\n' +
+				'\t\t\t\t\t\t\t\t\t\t<label class="container_check version_2">Do you smoke?\n' +
+				'\t\t\t\t\t\t\t\t\t\t\t<input type="checkbox" onchange="pre_existing_condition()" name="pre_existing_condition[]" value="0.35" class="required pre_existing_condition">\n' +
+				'\t\t\t\t\t\t\t\t\t\t\t<span class="checkmark"></span>\n' +
+				'\t\t\t\t\t\t\t\t\t\t</label>\n' +
+				'\t\t\t\t\t\t\t\t\t</div>\n' +
+				'\t\t\t\t\t\t\t\t\t<div class="form-group">\n' +
+				'\t\t\t\t\t\t\t\t\t\t<label class="container_check version_2">Do you have diabetes?\n' +
+				'\t\t\t\t\t\t\t\t\t\t\t<input type="checkbox" onchange="pre_existing_condition()" name="pre_existing_condition[]" value="0.75" class="required pre_existing_condition">\n' +
+				'\t\t\t\t\t\t\t\t\t\t\t<span class="checkmark"></span>\n' +
+				'\t\t\t\t\t\t\t\t\t\t</label>\n' +
+				'\t\t\t\t\t\t\t\t\t</div>\n' +
+				'\t\t\t\t\t\t\t\t\t<div class="form-group">\n' +
+				'\t\t\t\t\t\t\t\t\t\t<label class="container_check version_2">Do you have hypertension?\n' +
+				'\t\t\t\t\t\t\t\t\t\t\t<input type="checkbox" onchange="pre_existing_condition()" name="pre_existing_condition[]" value="1.5" class="required pre_existing_condition">\n' +
+				'\t\t\t\t\t\t\t\t\t\t\t<span class="checkmark"></span>\n' +
+				'\t\t\t\t\t\t\t\t\t\t</label>\n' +
+				'\t\t\t\t\t\t\t\t\t</div>\n' +
+				'\t\t\t\t\t\t\t\t\t<div class="form-group">\n' +
+				'\t\t\t\t\t\t\t\t\t\t<label class="container_check version_2">Are you overweight or obese?\n' +
+				'\t\t\t\t\t\t\t\t\t\t\t<input type="checkbox" onchange="pre_existing_condition()" name="pre_existing_condition[]" value="0.35" class="required pre_existing_condition">\n' +
+				'\t\t\t\t\t\t\t\t\t\t\t<span class="checkmark"></span>\n' +
+				'\t\t\t\t\t\t\t\t\t\t</label>\n' +
+				'\t\t\t\t\t\t\t\t\t</div>\n' +
+				'\t\t\t\t\t\t\t\t\t<div class="form-group">\n' +
+				'\t\t\t\t\t\t\t\t\t\t<label class="container_check version_2">Do you have a previous history of heart attack or any other heart conditions?\n' +
+				'\t\t\t\t\t\t\t\t\t\t\t<input type="checkbox" onchange="pre_existing_condition()" name="pre_existing_condition[]" value="1" class="required pre_existing_condition">\n' +
+				'\t\t\t\t\t\t\t\t\t\t\t<span class="checkmark"></span>\n' +
+				'\t\t\t\t\t\t\t\t\t\t</label>\n' +
+				'\t\t\t\t\t\t\t\t\t</div>\n' +
+				'\t\t\t\t\t\t\t\t\t<div class="form-group">\n' +
+				'\t\t\t\t\t\t\t\t\t\t<label class="container_check version_2">Do you have a history of liver conditions?\n' +
+				'\t\t\t\t\t\t\t\t\t\t\t<input type="checkbox" name="pre_existing_condition[]" value="0.65" class="required pre_existing_condition">\n' +
+				'\t\t\t\t\t\t\t\t\t\t\t<span class="checkmark"></span>\n' +
+				'\t\t\t\t\t\t\t\t\t\t</label>\n' +
+				'\t\t\t\t\t\t\t\t\t</div>\n' +
+				'\t\t\t\t\t\t\t\t\t<div class="form-group">\n' +
+				'\t\t\t\t\t\t\t\t\t\t<label class="container_check version_2">Do you have any kidney diseases?\n' +
+				'\t\t\t\t\t\t\t\t\t\t\t<input type="checkbox" onchange="pre_existing_condition()" name="pre_existing_condition[]" value="0.5" class="required pre_existing_condition">\n' +
+				'\t\t\t\t\t\t\t\t\t\t\t<span class="checkmark"></span>\n' +
+				'\t\t\t\t\t\t\t\t\t\t</label>\n' +
+				'\t\t\t\t\t\t\t\t\t</div>\n' +
+				'\t\t\t\t\t\t\t\t\t<div class="form-group">\n' +
+				'\t\t\t\t\t\t\t\t\t\t<label class="container_check version_2">Did you have any organ/bone marrow transplant?\n' +
+				'\t\t\t\t\t\t\t\t\t\t\t<input type="checkbox" onchange="pre_existing_condition()" name="pre_existing_condition[]" value="3" class="required pre_existing_condition">\n' +
+				'\t\t\t\t\t\t\t\t\t\t\t<span class="checkmark"></span>\n' +
+				'\t\t\t\t\t\t\t\t\t\t</label>\n' +
+				'\t\t\t\t\t\t\t\t\t</div>\n' +
+				'\t\t\t\t\t\t\t\t\t<div class="form-group">\n' +
+				'\t\t\t\t\t\t\t\t\t\t<label class="container_check version_2">Are you pregnant?\n' +
+				'\t\t\t\t\t\t\t\t\t\t\t<input type="checkbox" onchange="pre_existing_condition()" name="pre_existing_condition[]" value="1" class="required pre_existing_condition">\n' +
+				'\t\t\t\t\t\t\t\t\t\t\t<span class="checkmark"></span>\n' +
+				'\t\t\t\t\t\t\t\t\t\t</label>\n' +
+				'\t\t\t\t\t\t\t\t\t</div>\n' +
+				'\t\t\t\t\t\t\t\t\t<div class="form-group">\n' +
+				'\t\t\t\t\t\t\t\t\t\t<label class="container_check version_2">None of the above?\n' +
+				'\t\t\t\t\t\t\t\t\t\t\t<input type="checkbox" onchange="pre_existing_condition()" name="pre_existing_condition[]" value="0" class="required pre_existing_condition">\n' +
+				'\t\t\t\t\t\t\t\t\t\t\t<span class="checkmark"></span>\n' +
+				'\t\t\t\t\t\t\t\t\t\t</label>\n' +
+				'\t\t\t\t\t\t\t\t\t</div>';
+
+		var symptoms_days = '<h3 class="main_question"><strong>5/6</strong>How many days have you had these symptoms?</h3>\n' +
 				'\t\t\t\t\t\t\t\t\t<div class="form-group">\n' +
 				'\t\t\t\t\t\t\t\t\t\t<label class="container_radio version_2">Day 1-4\n' +
 				'\t\t\t\t\t\t\t\t\t\t\t<input type="radio" name="symptoms_duration" value="0.5"  onchange="symptoms_day()" class="required symptoms">\n' +
@@ -348,7 +429,8 @@
 				'\t\t\t\t\t\t\t\t\t\t</label>\n' +
 				'\t\t\t\t\t\t\t\t\t</div>';
 
-		function get_step_id(){
+
+		async function get_step_id(){
 
 			active_deactive(0);
 
@@ -398,24 +480,26 @@
 		});
 
 		function symptoms_day(){
-			active_deactive(1);
+			calculate_level();
+			//active_deactive(1);
 		}
 
 		function pre_existing_condition(){
 			active_deactive(1);
+			$("button.forward").attr('disabled',true);
 		}
 
-		function active_deactive(value){
+			function active_deactive(value){
 			if (value == 1){
 				$("#bottom-wizard button.submit").css('display','block');
 				$("#bottom-wizard button.submit").attr('disabled',false);
 			}else {
 				$("#bottom-wizard button.submit").css('display','none');
 			}
-
 		}
 
 		async function submit_survey(){
+
 			var age = $(".age").val();
 			var symptoms_one = $('input[name="symptom_page_one[]"]:checked').map(function () {
 				return this.value; // $(this).val()
@@ -448,12 +532,15 @@
 
 			var calculate_seventy = 0;
 			var calculate_thirty = 0;
-			if (symptoms_days == null || symptoms_days == undefined || symptoms_days == ''){
+			/*if (symptoms_days == null || symptoms_days == undefined || symptoms_days == ''){
 				calculate_seventy = Number(age) * 0.7;
 				calculate_thirty = sum_pre_existing_condition * 0.3;
 			}else{
 				calculate_seventy = (Number(age) + sum_symptoms_one + sum_symptoms_two + Number(symptoms_days))*0.7;
-			}
+			}*/
+
+			calculate_seventy = (Number(age) + sum_symptoms_one + sum_symptoms_two + Number(symptoms_days))*0.7;
+			calculate_thirty = sum_pre_existing_condition * 0.3;
 
 			var total = calculate_seventy + calculate_thirty;
 
@@ -496,6 +583,58 @@
 				$("#wizard_container").html(low);
 			}
 
+		}
+
+		async function calculate_level(){
+
+			var age = $(".age").val();
+			var symptoms_one = $('input[name="symptom_page_one[]"]:checked').map(function () {
+				return this.value; // $(this).val()
+			}).get();
+
+			var symptoms_two = $('input[name="symptom_page_two[]"]:checked').map(function () {
+				return this.value; // $(this).val()
+			}).get();
+
+			var pre_existing_condition = $('input[name="pre_existing_condition[]"]:checked').map(function () {
+				return this.value; // $(this).val()
+			}).get();
+
+			var symptoms_days = $(".symptoms").val();
+
+			var sum_symptoms_one = 0;
+			var sum_symptoms_two = 0;
+			var sum_pre_existing_condition = 0;
+
+			for (var i = 0; i<symptoms_one.length; i++){
+				sum_symptoms_one = sum_symptoms_one + Number(symptoms_one[i]);
+			}
+
+			for (var i = 0; i<symptoms_two.length; i++){
+				sum_symptoms_two = sum_symptoms_two + Number(symptoms_two[i]);
+			}
+			for (var i = 0; i<pre_existing_condition.length; i++){
+				sum_pre_existing_condition = sum_pre_existing_condition + Number(pre_existing_condition[i]);
+			}
+
+			var calculate_seventy = 0;
+			var calculate_thirty = 0;
+			/*if (symptoms_days == null || symptoms_days == undefined || symptoms_days == ''){
+				calculate_seventy = Number(age) * 0.7;
+				calculate_thirty = sum_pre_existing_condition * 0.3;
+			}else{
+				calculate_seventy = (Number(age) + sum_symptoms_one + sum_symptoms_two + Number(symptoms_days))*0.7;
+			}*/
+			calculate_seventy = (Number(age) + sum_symptoms_one + sum_symptoms_two + Number(symptoms_days))*0.7;
+
+			var total = calculate_seventy;
+
+			if (total < 6){
+				$('.pre-existing-condition_2').html(pre_existing_2);
+			}else{
+				active_deactive(1);
+				$("button.forward").attr('disabled',true);
+			}
 		}
 
 	</script>
