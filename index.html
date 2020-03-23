@@ -133,13 +133,13 @@
 							<!-- Leave for security protection, read docs for details -->
 							<div id="middle-wizard">
 								<div id="1" class="step">
-									<h3 class="main_question"><strong>1/6</strong>Are you asking for yourself or someone else?</h3>
+									<h3 class="main_question"><strong>1/6</strong>Are you asking for Yourself or Someone Else?</h3>
 									<div class="form-group radio_input">
 										<label class="container_radio">Yourself
 											<input type="radio" name="yes_no" value="yes" class="required" >
 											<span class="checkmark"></span>
 										</label>
-										<label class="container_radio">Someone else
+										<label class="container_radio">Someone Else
 											<input type="radio" name="yes_no" value="no" class="required">
 											<span class="checkmark"></span>
 										</label>
@@ -180,7 +180,7 @@
 									</div>
 								</div>
 								<div id="3" class="step">
-									<h3 class="main_question"><strong>3/6</strong> What are your symptoms?</h3>
+									<h3 class="main_question"><strong>3/6</strong> What are your Symptoms?</h3>
 									<div class="form-group">
 										<label class="container_check version_2">Shortness of Breath
 											<input type="checkbox" name="symptom_page_one[]" value="2" class="required">
@@ -210,7 +210,7 @@
 									</div>
 								</div>
 								<div id="4" class="step">
-									<h3 class="main_question"><strong>4/6</strong> Do you have any of these additional symptom?</h3>
+									<h3 class="main_question"><strong>4/6</strong> Do you have any of these Additional Symptoms?</h3>
 									<div class="form-group">
 										<label class="container_check version_2">Nausea
 											<input type="checkbox" name="symptom_page_two[]" value="0.65" class="required">
@@ -340,10 +340,15 @@
 	<script>
 		var symptom_page_one = '';
 		var symptom_page_two = '';
-		var pre_existing = '<h3 class="main_question"><strong>5/6</strong>Do You Have Any Pre-Existing Conditions?</h3>\n' +
+		var pre_existing = '<h3 class="main_question"><strong>6/6</strong>Do You Have Any Pre-Existing Conditions (Please Only Select the Conditions You Have)?</h3>\n' +
 				'\t\t\t\t\t\t\t\t\t<div class="form-group">\n' +
 				'\t\t\t\t\t\t\t\t\t\t<label class="container_check version_2">Do you smoke?\n' +
 				'\t\t\t\t\t\t\t\t\t\t\t<input type="checkbox" onchange="pre_existing_condition()" name="pre_existing_condition[]" value="0.35" class="required pre_existing_condition">\n' +
+				'\t\t\t\t\t\t\t\t\t\t\t<span class="checkmark"></span>\n' +
+				'\t\t\t\t\t\t\t\t\t\t</label>\n' +
+				'\t\t\t\t\t\t\t\t\t</div>\n' +
+				'\t\t\t\t\t\t\t\t\t\t<label class="container_check version_2">Do you have COPD or previous history of respiratory illness?\n' +
+				'\t\t\t\t\t\t\t\t\t\t\t<input type="checkbox" onchange="pre_existing_condition()" name="pre_existing_condition[]" value="2" class="required pre_existing_condition">\n' +
 				'\t\t\t\t\t\t\t\t\t\t\t<span class="checkmark"></span>\n' +
 				'\t\t\t\t\t\t\t\t\t\t</label>\n' +
 				'\t\t\t\t\t\t\t\t\t</div>\n' +
@@ -402,10 +407,15 @@
 				'\t\t\t\t\t\t\t\t\t\t</label>\n' +
 				'\t\t\t\t\t\t\t\t\t</div>';
 
-		var pre_existing_2 = '<h3 class="main_question"><strong>6/6</strong>Do You Have Any Pre-Existing Conditions?</h3>\n' +
+		var pre_existing_2 = '<h3 class="main_question"><strong>6/6</strong>Do You Have Any Pre-Existing Conditions (Please Only Select the Conditions You Have)?</h3>\n' +
 				'\t\t\t\t\t\t\t\t\t<div class="form-group">\n' +
 				'\t\t\t\t\t\t\t\t\t\t<label class="container_check version_2">Do you smoke?\n' +
 				'\t\t\t\t\t\t\t\t\t\t\t<input type="checkbox" onchange="pre_existing_condition()" name="pre_existing_condition[]" value="0.35" class="required pre_existing_condition">\n' +
+				'\t\t\t\t\t\t\t\t\t\t\t<span class="checkmark"></span>\n' +
+				'\t\t\t\t\t\t\t\t\t\t</label>\n' +
+				'\t\t\t\t\t\t\t\t\t</div>\n' +
+				'\t\t\t\t\t\t\t\t\t\t<label class="container_check version_2">Do you have COPD or previous history of respiratory illness?\n' +
+				'\t\t\t\t\t\t\t\t\t\t\t<input type="checkbox" onchange="pre_existing_condition()" name="pre_existing_condition[]" value="2" class="required pre_existing_condition">\n' +
 				'\t\t\t\t\t\t\t\t\t\t\t<span class="checkmark"></span>\n' +
 				'\t\t\t\t\t\t\t\t\t\t</label>\n' +
 				'\t\t\t\t\t\t\t\t\t</div>\n' +
@@ -464,7 +474,7 @@
 				'\t\t\t\t\t\t\t\t\t\t</label>\n' +
 				'\t\t\t\t\t\t\t\t\t</div>';
 
-		var symptoms_days = '<h3 class="main_question"><strong>5/6</strong>How many days have you had these symptoms?</h3>\n' +
+		var symptoms_days = '<h3 class="main_question"><strong>5/6</strong>How many days have you had these Symptoms?</h3>\n' +
 				'\t\t\t\t\t\t\t\t\t<div class="form-group">\n' +
 				'\t\t\t\t\t\t\t\t\t\t<label class="container_radio version_2">Day 1-4\n' +
 				'\t\t\t\t\t\t\t\t\t\t\t<input type="radio" name="symptoms_duration" value="0.5"  onchange="symptoms_day()" class="required symptoms">\n' +
@@ -613,7 +623,7 @@
 			console.log("Seventy: "+calculate_seventy);
 			console.log("Thirty: " +calculate_thirty);
 			var total = calculate_seventy + calculate_thirty;
-
+			console.log("Total: " + total);
 			if (total >= 6){
 				var high = '<div class="result-area">\n' +
 						'\t\t\t\t\t\t<p class="" style="font-size: 18px; font-weight: bold; text-align: left; color: red">\n' +
@@ -638,7 +648,7 @@
 						'\t\t\t\t\t\t<p style="font-size: 15px; color: #1155cc"><b>Please come back to us or consult a doctor immediately.</b></p>\n' +
 						'\n' +
 						'\t\t\t\t\t\t<p style="font-size: 15px; color: black"><b>Meanwhile it is important to remember to:</b></p>\n' +
-						'\t\t\t\t\t\t<ul>\n' +
+						'\t\t\t\t\t\t<ul style="list-style: decimal">\n' +
 						'\t\t\t\t\t\t\t<li><p style="font-weight: bold; color: black">Strictly maintain disinfection throughout the day;\n' +
 						'\t\t\t\t\t\t\t\twash your hands with soap for 20-30 secs or use hand sanitise.</p></li>\n' +
 						'\t\t\t\t\t\t\t<li><p style="font-weight: bold; color: black">Disinfect surfaces that are regularly touched around you</p></li>\n' +
@@ -659,7 +669,7 @@
 						'\t\t\t\t\t\t\tconsult our “protect yourself” page to see how to properly sanitize yourself and your home.\n' +
 						'\t\t\t\t\t\t</p>\n' +
 						'\t\t\t\t\t\t<p style="font-size: 15px;"><b>Remember:</b></p>\n' +
-						'\t\t\t\t\t\t<ul>\n' +
+						'\t\t\t\t\t\t<ul style="list-style: decimal">\n' +
 						'\t\t\t\t\t\t\t<li><p style="font-weight: bold; color: black">It is important to follow good hygiene practices; wash your\n' +
 						'\t\t\t\t\t\t\t\thands for 20-30 secs with soap or use sanitizer often throughout the day.</p></li>\n' +
 						'\t\t\t\t\t\t\t<li><p style="font-weight: bold; color: black">Ensure use of tissue or cover your mouth when sneezing/coughing.\n' +
@@ -723,7 +733,7 @@
 			calculate_seventy = (Number(age) + sum_symptoms_one + sum_symptoms_two + Number(symptoms_days))*0.7;
 
 			var total = calculate_seventy;
-
+			console.log(total);
 			if (total < 6){
 				$('.pre-existing-condition_2').html(pre_existing_2);
 			}else{
