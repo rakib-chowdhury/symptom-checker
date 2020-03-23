@@ -70,6 +70,21 @@
 			</div>
 			<div class="col-lg-12 content-right" id="start">
 				<div id="wizard_container">
+					<!--<div class="result-area">
+						<h5 class="text-center" style="color: #5dd816">Low Risk</h5>
+						<p class="" style="font-size: 15px; font-weight: bold; text-align: left">
+							Currently your symptoms do not seem to require immediate medical attention.
+							IT IS HOWEVER VERY IMPORTANT that you stay indoors for at least 14 days and
+							consult our “protect yourself” page to see how to properly sanitize yourself and your home.
+						</p>
+						<p style="font-size: 15px;"><b>Remember:</b></p>
+						<ul>
+							<li><p>It is important to follow good hygiene practices; wash your
+								hands for 20-30 secs with soap or use sanitizer often throughout the day.</p></li>
+							<li><p>Ensure use of tissue or cover your mouth when sneezing/coughing.
+								Remember this disease spreads by tiny droplets from sneeze/ cough</p></li>
+						</ul>
+					</div>-->
 					<div id="top-wizard">
 							<div id="progressbar"></div>
 						</div>
@@ -203,7 +218,7 @@
 							</div>
 							<!-- /bottom-wizard -->
 						</form>
-					</div>
+				</div>
 					<!-- /Wizard container -->
 			</div>
 			<!-- /content-right-->
@@ -489,7 +504,7 @@
 			$("button.forward").attr('disabled',true);
 		}
 
-			function active_deactive(value){
+		function active_deactive(value){
 			if (value == 1){
 				$("#bottom-wizard button.submit").css('display','block');
 				$("#bottom-wizard button.submit").attr('disabled',false);
