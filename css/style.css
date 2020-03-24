@@ -26,7 +26,7 @@ h6 {
 }
 
 p {
-    margin-bottom: 25px
+    /*margin-bottom: 25px*/
 }
 
 strong {
@@ -48,7 +48,6 @@ ul,
 ol {
     list-style: none;
     margin: 0 0 25px 0;
-    padding: 0
 }
 
 a {
@@ -426,7 +425,6 @@ a.btn_1.rounded,
 @media (max-width: 991px) {
     .content-right {
         height: auto;
-        padding: 30px 15px
     }
 }
 
@@ -485,112 +483,112 @@ a#logo {
 }
 
 #social ul li a:hover {
-    opacity: 1
+    opacity: 1;
 }
 
 .copy {
-    position: absolute;
-    bottom: 25px;
-    left: 0;
-    width: 100%;
-    opacity: 0.5
+position: absolute;
+bottom: 25px;
+left: 0;
+width: 100%;
+opacity: 0.5
 }
 
 @media (max-width: 991px) {
-    .copy {
-        display: none
-    }
+.copy {
+    display: none
+}
 }
 
 #left_form {
-    text-align: center
+text-align: center
 }
 
 #left_form h2 {
-    font-size: 28px;
-    font-size: 1.75rem;
-    color: #0686D8
+font-size: 28px;
+font-size: 1.75rem;
+color: #0686D8
 }
 
 @media (max-width: 767px) {
-    #left_form figure img {
-        height: 130px;
-        width: auto
-    }
+#left_form figure img {
+    height: 130px;
+    width: auto
+}
 }
 
 input#website {
-    display: none
+display: none
 }
 
 #wizard_container {
-    width: 400px
+width: 600px
 }
 
 @media (max-width: 767px) {
-    #wizard_container {
-        width: 100%
-    }
+#wizard_container {
+    width: 100%
+}
 }
 
 h3.main_question {
-    margin: 0 0 20px 0;
-    padding: 0;
-    font-weight: 500;
-    font-size: 18px;
-    font-size: 1.125rem
+margin: 0 0 20px 0;
+padding: 0;
+font-weight: 500;
+font-size: 18px;
+font-size: 1.125rem
 }
 
 h3.main_question strong {
-    display: block;
-    color: #999;
-    margin-bottom: 5px
+display: block;
+color: #999;
+margin-bottom: 5px
 }
 
 button.backward,
 button.forward,
 button.submit {
-    border: none;
-    color: #fff;
-    text-decoration: none;
-    transition: background .5s ease;
-    -moz-transition: background .5s ease;
-    -webkit-transition: background .5s ease;
-    -o-transition: background .5s ease;
-    display: inline-block;
-    cursor: pointer;
-    outline: none;
-    text-align: center;
-    background: #434bdf;
-    position: relative;
-    font-size: 14px;
-    font-size: 0.875rem;
-    font-weight: 600;
-    -webkit-border-radius: 3px;
-    -moz-border-radius: 3px;
-    -ms-border-radius: 3px;
-    border-radius: 3px;
-    line-height: 1;
-    padding: 12px 30px
+border: none;
+color: #fff;
+text-decoration: none;
+transition: background .5s ease;
+-moz-transition: background .5s ease;
+-webkit-transition: background .5s ease;
+-o-transition: background .5s ease;
+display: inline-block;
+cursor: pointer;
+outline: none;
+text-align: center;
+background: #434bdf;
+position: relative;
+font-size: 14px;
+font-size: 0.875rem;
+font-weight: 600;
+-webkit-border-radius: 3px;
+-moz-border-radius: 3px;
+-ms-border-radius: 3px;
+border-radius: 3px;
+line-height: 1;
+padding: 12px 30px
 }
 
 button.backward {
-    color: #777;
-    background: #e8e8e8
+color: #777;
+background: #e8e8e8
 }
 
 button[disabled] {
-    display: none
+display: none
 }
 
 /*button.submit:before {
-    content: "\4e";
-    font-family: 'ElegantIcons';
-    position: absolute;
-    top: 8px;
-    right: 10px;
-    font-size: 18px;
-    font-size: 1.125rem
+content: "\4e";
+font-family: 'ElegantIcons';
+position: absolute;
+top: 8px;
+right: 10px;
+font-size: 18px;
+font-size: 1.125rem
 }*/
 
 .backward:hover,
@@ -820,8 +818,8 @@ header #social ul li a {
 }
 
 footer {
-    border-top: 1px solid #ededed;
-    background: #ededed;
+    /*border-top: 1px solid #ededed;*/
+    background: #ffffff;
     padding-bottom: 1%;
 }
 
@@ -854,6 +852,11 @@ footer ul {
     .footer-bottom-develop > span > img{
         width: 50%;
         height: 50%;
+    }
+
+    .top-logo > img{
+        height: 100%;
+        width: 100%;
     }
 }
 
@@ -917,8 +920,8 @@ footer ul li a:hover {
     }
 
     .top-logo > img{
-        height: auto;
-        width: 50%;
+        height: 100%;
+        width: 100%;
     }
 }
 
