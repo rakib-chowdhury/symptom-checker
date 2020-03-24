@@ -517,7 +517,7 @@
 			}).get();
 			console.log("pre_existing_condition Array: " + pre_existing_condition);
 
-			var symptoms_days = $(".symptoms").val();
+			var symptoms_days = $(".symptoms:checked").val();
 			console.log("symptoms_days : " + symptoms_days);
 
 			var sum_symptoms_one = 0;
@@ -647,8 +647,8 @@
 				return this.value; // $(this).val()
 			}).get();
 
-			var symptoms_days = $(".symptoms").val();
-
+			var symptoms_days = $(".symptoms:checked").val();
+			console.log('symptom days: ' + symptoms_days);
 			var sum_symptoms_one = 0;
 			var sum_symptoms_two = 0;
 			var sum_pre_existing_condition = 0;
