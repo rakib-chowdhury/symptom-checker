@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 24, 2020 at 06:30 AM
+-- Generation Time: Mar 24, 2020 at 08:46 AM
 -- Server version: 10.4.8-MariaDB
 -- PHP Version: 7.3.11
 
@@ -132,6 +132,35 @@ INSERT INTO `permissions` (`id`, `name`, `status`, `created_on`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `question_answers`
+--
+
+CREATE TABLE `question_answers` (
+  `id` int(11) NOT NULL,
+  `user_session_id` varchar(500) COLLATE utf8_estonian_ci NOT NULL,
+  `asking_for` varchar(255) COLLATE utf8_estonian_ci NOT NULL,
+  `age_range` varchar(255) COLLATE utf8_estonian_ci NOT NULL,
+  `symptom_page_1` varchar(255) COLLATE utf8_estonian_ci NOT NULL,
+  `additional_symptom` varchar(255) COLLATE utf8_estonian_ci NOT NULL,
+  `symptom_duration` varchar(255) COLLATE utf8_estonian_ci NOT NULL,
+  `pre_existing_history` varchar(255) COLLATE utf8_estonian_ci NOT NULL,
+  `percentage_seventy_points` double NOT NULL,
+  `percentage_thirty_points` double NOT NULL,
+  `total_points` double NOT NULL,
+  `created_on` bigint(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_estonian_ci;
+
+--
+-- Dumping data for table `question_answers`
+--
+
+INSERT INTO `question_answers` (`id`, `user_session_id`, `asking_for`, `age_range`, `symptom_page_1`, `additional_symptom`, `symptom_duration`, `pre_existing_history`, `percentage_seventy_points`, `percentage_thirty_points`, `total_points`, `created_on`) VALUES
+(1, '1585035442', 'yes', '4', '0.75', '0.65', '2.5', '4.7', 5.53, 1.41, 6.94, 1585035469000),
+(2, '1585035839', 'yes', '4', '0.75', '1.9', '1', '2.85', 5.3549999999999995, 0.855, 6.209999999999999, 1585035890000);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `user_roles`
 --
 
@@ -209,6 +238,13 @@ ALTER TABLE `permissions`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `question_answers`
+--
+ALTER TABLE `question_answers`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `user_session_id` (`user_session_id`);
+
+--
 -- Indexes for table `user_roles`
 --
 ALTER TABLE `user_roles`
@@ -247,6 +283,12 @@ ALTER TABLE `login`
 --
 ALTER TABLE `permissions`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT for table `question_answers`
+--
+ALTER TABLE `question_answers`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `user_roles`

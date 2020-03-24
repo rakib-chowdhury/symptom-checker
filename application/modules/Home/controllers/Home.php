@@ -14,12 +14,6 @@ class Home extends CI_Controller {
     }
 	public function show_home()
     {
-//        $data = array();
-//        $data['active_page'] = 'Dashboard';
-//        $data['top_header'] = $this->load->view('layouts/backend/top_header', '', true);
-//        $data['left_nav'] = $this->load->view('layouts/backend/left_nav', $data, true);
-//        $data['footer'] = $this->load->view('layouts/backend/footer', '', true);
-//        $data['master_body'] = $this->load->view('dashboard_view', '', true);
         $this->load->view('index', '');
     }
 
@@ -28,5 +22,24 @@ class Home extends CI_Controller {
 		$this->load->view('test', '');
 	}
 
-
+	public function submit_symptom_data()
+	{
+		$data = array();
+		$data['user_session_id'] = $_SESSION['__ci_last_regenerate'];
+		$data['asking_for'] = $this->input->post('asking_for');
+		$data['age_range'] = $this->input->post('age_range');
+		$data['symptom_page_1'] = $this->input->post('symptom_page_1');
+		$data['additional_symptom'] = $this->input->post('additional_symptom');
+		$data['symptom_duration'] = $this->input->post('symptom_duration');
+		$data['pre_existing_history'] = $this->input->post('pre_existing_history');
+		$data['percentage_seventy_points'] = $this->input->post('percentage_seventy_points');
+		$data['percentage_thirty_points'] = $this->input->post('percentage_thirty_points');
+		$data['total_points'] = $this->input->post('total_points');
+		$data['created_on'] = $this->basic_lib->convert_date_time_to_millisecond(date('Y-m-d'), date('H:i:s'));
+		if($this->basic_model->insert_ret('question_answers', $data) > 0){
+			echo 1;
+		}else{
+			echo 0;
+		}
+	}
 }

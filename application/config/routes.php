@@ -49,4 +49,5 @@ $route['translate_uri_dashes'] = FALSE;
 
 
 $route['initiate_test'] = 'home/Home/view_test';
+$route['submit_symptom_data'] = 'home/Home/submit_symptom_data';
 

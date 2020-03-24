@@ -2,28 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ae99ee2c-2deb-4229-a685-4de0b1ba5648" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/application/modules/Home/controllers/Home.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/application/helpers/symptom_checker_helper.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/bootstrap.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/menu.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/vendors.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/favicon.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/info_graphic_1.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/logo_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/logo_3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/logo_4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/logo_5.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/renata-logo-230width.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/common_scripts.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/functions.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/jquery-3.2.1.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/modernizr.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/survey_func.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/velocity.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/config/autoload.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/config/autoload.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/config/routes.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/config/routes.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/modules/Home/controllers/Home.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/modules/Home/controllers/Home.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/modules/Home/views/test.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/modules/Home/views/test.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/symptom_checker.sql" beforeDir="false" afterPath="$PROJECT_DIR$/db/symptom_checker.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/symptom_checker.sql" beforeDir="false" afterPath="$PROJECT_DIR$/symptom_checker.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,10 +43,11 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../inner-circle" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../sajida_home_care_web" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\symptom-checker\application\helpers" />
       <recent name="C:\xampp\htdocs\symptom-checker\application\modules\Home\controllers" />
       <recent name="F:\survey\img" />
     </key>
@@ -86,11 +73,11 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="463" y="120" key="FileChooserDialogImpl" timestamp="1585027815447">
+    <state x="463" y="120" key="FileChooserDialogImpl" timestamp="1585035189066">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="463" y="118" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1584943424411" />
-    <state x="463" y="120" key="FileChooserDialogImpl/0.0.1366.738@0.0.1366.738" timestamp="1585027815447" />
+    <state x="463" y="120" key="FileChooserDialogImpl/0.0.1366.738@0.0.1366.738" timestamp="1585035189066" />
     <state x="518" y="287" key="NewPhpFileDialog" timestamp="1584983400534">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

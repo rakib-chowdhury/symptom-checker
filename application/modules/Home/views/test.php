@@ -59,21 +59,21 @@
 							<!-- Leave for security protection, read docs for details -->
 							<div id="middle-wizard">
 								<div id="1" class="step">
-									<h3 class="main_question"><strong>1/6</strong>Are you asking for Yourself or Someone Else?</h3>
+									<h3 class="main_question"><strong>1/6</strong><?= QUESTION_1 ?></h3>
 									<div class="form-group radio_input">
 										<label class="container_radio">Yourself
-											<input type="radio" name="yes_no" value="yes" class="required" >
+											<input type="radio" name="yes_no" value="yes" class="required symptoms_for" >
 											<span class="checkmark"></span>
 										</label>
 										<label class="container_radio">Someone Else
-											<input type="radio" name="yes_no" value="no" class="required">
+											<input type="radio" name="yes_no" value="no" class="required symptoms_for">
 											<span class="checkmark"></span>
 										</label>
 									</div>
 								</div>
 								<!-- /step-->
 								<div id="2" class="step">
-									<h3 class="main_question"><strong>2/6</strong>Select your age range?</h3>
+									<h3 class="main_question"><strong>2/6</strong><?= QUESTION_2 ?></h3>
 									<div class="form-group">
 										<label class="container_radio version_2">70+
 											<input type="radio" name="age" value="5" class="required patient_age">
@@ -106,7 +106,7 @@
 									</div>
 								</div>
 								<div id="3" class="step">
-									<h3 class="main_question"><strong>3/6</strong> What are your Symptoms?</h3>
+									<h3 class="main_question"><strong>3/6</strong><?= QUESTION_3 ?></h3>
 									<div class="form-group">
 										<label class="container_check version_2">Shortness of Breath
 											<input type="checkbox" name="symptom_page_one[]" value="2" class="required">
@@ -136,7 +136,7 @@
 									</div>
 								</div>
 								<div id="4" class="step">
-									<h3 class="main_question"><strong>4/6</strong> Do you have any of these Additional Symptoms?</h3>
+									<h3 class="main_question"><strong>4/6</strong><?= QUESTION_4 ?></h3>
 									<div class="form-group">
 										<label class="container_check version_2">Nausea
 											<input type="checkbox" name="symptom_page_two[]" value="0.65" class="required">
@@ -265,7 +265,7 @@
 	<script>
 		var symptom_page_one = '';
 		var symptom_page_two = '';
-		var pre_existing = '<h3 class="main_question"><strong>6/6</strong>Do You Have Any Pre-Existing Conditions (Please Only Select the Conditions You Have)?</h3>\n' +
+		var pre_existing = '<h3 class="main_question"><strong>6/6</strong><?= QUESTION_6 ?></h3>\n' +
 				'\t\t\t\t\t\t\t\t\t<div class="form-group">\n' +
 				'\t\t\t\t\t\t\t\t\t\t<label class="container_check version_2">Do you smoke?\n' +
 				'\t\t\t\t\t\t\t\t\t\t\t<input type="checkbox" onchange="pre_existing_condition()" name="pre_existing_condition[]" value="0.35" class="required pre_existing_condition">\n' +
@@ -332,7 +332,7 @@
 				'\t\t\t\t\t\t\t\t\t\t</label>\n' +
 				'\t\t\t\t\t\t\t\t\t</div>';
 
-		var pre_existing_2 = '<h3 class="main_question"><strong>6/6</strong>Do You Have Any Pre-Existing Conditions (Please Only Select the Conditions You Have)?</h3>\n' +
+		var pre_existing_2 = '<h3 class="main_question"><strong>6/6</strong><?= QUESTION_6 ?></h3>\n' +
 				'\t\t\t\t\t\t\t\t\t<div class="form-group">\n' +
 				'\t\t\t\t\t\t\t\t\t\t<label class="container_check version_2">Do you smoke?\n' +
 				'\t\t\t\t\t\t\t\t\t\t\t<input type="checkbox" onchange="pre_existing_condition()" name="pre_existing_condition[]" value="0.35" class="required pre_existing_condition">\n' +
@@ -399,7 +399,7 @@
 				'\t\t\t\t\t\t\t\t\t\t</label>\n' +
 				'\t\t\t\t\t\t\t\t\t</div>';
 
-		var symptoms_days = '<h3 class="main_question"><strong>5/6</strong>How many days have you had these Symptoms?</h3>\n' +
+		var symptoms_days = '<h3 class="main_question"><strong>5/6</strong><?= QUESTION_5 ?></h3>\n' +
 				'\t\t\t\t\t\t\t\t\t<div class="form-group">\n' +
 				'\t\t\t\t\t\t\t\t\t\t<label class="container_radio version_2">Day 1-4\n' +
 				'\t\t\t\t\t\t\t\t\t\t\t<input type="radio" name="symptoms_duration" value="0.5"  onchange="symptoms_day()" class="required symptoms">\n' +
@@ -498,7 +498,7 @@
 		}
 
 		async function submit_survey(){
-
+			var asking_for = $('.symptoms_for:checked').val();
 			var age = $(".patient_age:checked").val();
 			console.log("age: " + age);
 			var symptoms_one = $('input[name="symptom_page_one[]"]:checked').map(function () {
@@ -552,12 +552,13 @@
 			var sum_seventy = Number(age) + sum_symptoms_one + sum_symptoms_two + Number(symptoms_days);
 			console.log("sum_seventy :"+ sum_seventy);
 
-			calculate_seventy = (Number(age) + sum_symptoms_one + sum_symptoms_two + Number(symptoms_days))*0.7;
-			calculate_thirty = sum_pre_existing_condition * 0.3;
+			calculate_seventy = Number((Number(age) + sum_symptoms_one + sum_symptoms_two + Number(symptoms_days))*0.7).toFixed(3);
+			calculate_thirty = Number(sum_pre_existing_condition * 0.3).toFixed(3);
 			console.log("Seventy: "+calculate_seventy);
 			console.log("Thirty: " +calculate_thirty);
 			var total = calculate_seventy + calculate_thirty;
 			console.log("Total: " + total);
+			submit_data(asking_for, age, sum_symptoms_one, sum_symptoms_two, symptoms_days, sum_pre_existing_condition, calculate_seventy, calculate_thirty, total);
 			if (total >= 6){
 				var high = '<div class="result-area" style="border-bottom: 1px solid #ededed"><h3 class="text-center" style="color: red">Tier 3: 5.94+</h3>\n' +
 						'\t\t\t\t\t\t<p class="" style="font-size: 18px; font-weight: bold; text-align: left; color: red">\n' +
@@ -686,6 +687,26 @@
 				active_deactive(1);
 				$("button.forward").attr('disabled',true);
 			}
+		}
+
+		function submit_data(asking_for, age_range, sum_symptom_page_1, sum_additional_symptom, symptom_duration, sum_pre_existing_history, percentage_seventy_points, percentage_thirty_points, total_points) {
+			$.ajax({
+				type: 'POST',
+				url: '<?php echo site_url('submit_symptom_data') ?>',
+				data: {
+					asking_for: asking_for,
+					age_range: age_range,
+					symptom_page_1: sum_symptom_page_1,
+					additional_symptom: sum_additional_symptom,
+					symptom_duration: symptom_duration,
+					pre_existing_history: sum_pre_existing_history,
+					percentage_seventy_points: percentage_seventy_points,
+					percentage_thirty_points: percentage_thirty_points,
+					total_points: total_points,
+				}, success: function (data) {
+					//alert(data);
+				}
+			});
 		}
 	</script>
 
