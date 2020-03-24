@@ -1,0 +1,693 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="COVID 19 RESPONSE BANGLADESH">
+    <meta name="author" content="Sarwar">
+    <title>Symptom Checker</title>
+
+    <!-- Favicons-->
+    <link rel="shortcut icon" href="<?= base_url() ?>/public/assets/frontend/img/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" type="image/x-icon" href="<?= base_url() ?>/public/assets/frontend/img/apple-touch-icon-57x57-precomposed.png">
+    <link rel="apple-touch-icon" type="image/x-icon" sizes="72x72" href="<?= base_url() ?>/public/assets/frontend/img/apple-touch-icon-72x72-precomposed.png">
+    <link rel="apple-touch-icon" type="image/x-icon" sizes="114x114" href="<?= base_url() ?>/public/assets/frontend/img/apple-touch-icon-114x114-precomposed.png">
+    <link rel="apple-touch-icon" type="image/x-icon" sizes="144x144" href="<?= base_url() ?>/public/assets/frontend/img/apple-touch-icon-144x144-precomposed.png">
+
+    <!-- GOOGLE WEB FONT -->
+    <link href="https://fonts.googleapis.com/css?family=Work+Sans:400,500,600" rel="stylesheet">
+
+    <!-- BASE CSS -->
+    <link href="<?= base_url() ?>/public/assets/frontend/css/bootstrap.min.css" rel="stylesheet">
+	<link href="<?= base_url() ?>/public/assets/frontend/css/menu.css" rel="stylesheet">
+    <link href="<?= base_url() ?>/public/assets/frontend/css/style.css" rel="stylesheet">
+	<link href="<?= base_url() ?>/public/assets/frontend/css/vendors.css" rel="stylesheet">
+
+    <!-- YOUR CUSTOM CSS -->
+    <!--<link href="css/custom.css" rel="stylesheet">-->
+	
+	<!-- MODERNIZR MENU -->
+	<script src="<?= base_url() ?>/public/assets/frontend/js/modernizr.js"></script>
+
+</head>
+
+<body>
+	
+	<div id="preloader">
+		<div data-loader="circle-side"></div>
+	</div><!-- /Preload -->
+	
+	<div id="loader_form">
+		<div data-loader="circle-side-2"></div>
+	</div><!-- /loader_form -->
+
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-lg-12  text-center top-logo">
+				<img style="margin-top: 2%" src="<?= base_url() ?>/public/assets/frontend/img/logo_5.png" width="50%" height="50%" alt="" class="img-fluid">
+			</div>
+			<div class="col-lg-12 content-right" id="start">
+				<div id="wizard_container">
+					<div id="top-wizard">
+							<div id="progressbar"></div>
+						</div>
+						<form id="wrapped" class="survey-from" method="POST">
+							<input id="website" name="website" type="text" value="">
+							<!-- Leave for security protection, read docs for details -->
+							<div id="middle-wizard">
+								<div id="1" class="step">
+									<h3 class="main_question"><strong>1/6</strong>Are you asking for Yourself or Someone Else?</h3>
+									<div class="form-group radio_input">
+										<label class="container_radio">Yourself
+											<input type="radio" name="yes_no" value="yes" class="required" >
+											<span class="checkmark"></span>
+										</label>
+										<label class="container_radio">Someone Else
+											<input type="radio" name="yes_no" value="no" class="required">
+											<span class="checkmark"></span>
+										</label>
+									</div>
+								</div>
+								<!-- /step-->
+								<div id="2" class="step">
+									<h3 class="main_question"><strong>2/6</strong>Select your age range?</h3>
+									<div class="form-group">
+										<label class="container_radio version_2">70+
+											<input type="radio" name="age" value="5" class="required patient_age">
+											<span class="checkmark"></span>
+										</label>
+									</div>
+									<div class="form-group">
+										<label class="container_radio version_2">60-69
+											<input type="radio" name="age" value="4" class="required patient_age">
+											<span class="checkmark"></span>
+										</label>
+									</div>
+									<div class="form-group">
+										<label class="container_radio version_2">50-59
+											<input type="radio" name="age" value="3" class="required patient_age">
+											<span class="checkmark"></span>
+										</label>
+									</div>
+									<div class="form-group">
+										<label class="container_radio version_2">35-49
+											<input type="radio" name="age" value="1" class="required patient_age">
+											<span class="checkmark"></span>
+										</label>
+									</div>
+									<div class="form-group">
+										<label class="container_radio version_2">1-35
+											<input type="radio" name="age" value="0.5" class="required patient_age">
+											<span class="checkmark"></span>
+										</label>
+									</div>
+								</div>
+								<div id="3" class="step">
+									<h3 class="main_question"><strong>3/6</strong> What are your Symptoms?</h3>
+									<div class="form-group">
+										<label class="container_check version_2">Shortness of Breath
+											<input type="checkbox" name="symptom_page_one[]" value="2" class="required">
+											<span class="checkmark"></span>
+										</label>
+									</div>
+
+									<div class="form-group">
+										<label class="container_check version_2">Fever
+											<input type="checkbox" name="symptom_page_one[]" value="0.75" class="required">
+											<span class="checkmark"></span>
+										</label>
+									</div>
+
+									<div class="form-group">
+										<label class="container_check version_2">Dry Cough
+											<input type="checkbox" name="symptom_page_one[]" value="0.75" class="required">
+											<span class="checkmark"></span>
+										</label>
+									</div>
+
+									<div class="form-group">
+										<label class="container_check version_2">None of the above
+											<input type="checkbox" name="symptom_page_one[]" value="0" class="required symptom_page_one_zero">
+											<span class="checkmark"></span>
+										</label>
+									</div>
+								</div>
+								<div id="4" class="step">
+									<h3 class="main_question"><strong>4/6</strong> Do you have any of these Additional Symptoms?</h3>
+									<div class="form-group">
+										<label class="container_check version_2">Nausea
+											<input type="checkbox" name="symptom_page_two[]" value="0.65" class="required">
+											<span class="checkmark"></span>
+										</label>
+									</div>
+									<div class="form-group">
+										<label class="container_check version_2">Diarrhea
+											<input type="checkbox" name="symptom_page_two[]" value="0.65" class="required">
+											<span class="checkmark"></span>
+										</label>
+									</div>
+
+									<div class="form-group">
+										<label class="container_check version_2">Fatigue and Body ache
+											<input type="checkbox" name="symptom_page_two[]" value="0.6" class="required">
+											<span class="checkmark"></span>
+										</label>
+									</div>
+
+									<div class="form-group">
+										<label class="container_check version_2">Sore throat
+											<input type="checkbox" name="symptom_page_two[]" value="0.6" class="required">
+											<span class="checkmark"></span>
+										</label>
+									</div>
+
+									<div class="form-group">
+										<label class="container_check version_2">None of the above
+											<input type="checkbox" name="symptom_page_two[]" value="0" class="required symptom_page_two_zero">
+											<span class="checkmark"></span>
+										</label>
+									</div>
+								</div>
+								<div id="5" class="step pre-existing-condition">
+								</div>
+								<div id="6" class="step pre-existing-condition_2">
+								</div>
+							</div>
+							<!-- /middle-wizard -->
+							<div id="bottom-wizard">
+								<button type="button" name="backward" class="backward" onclick="active_deactive(0)">Prev</button>
+								<button type="button" name="forward" class="forward" onclick="get_step_id()">Next</button>
+								<button type="button" style="display: none" name="process" onclick="submit_survey()" class="submit">Submit</button>
+							</div>
+							<!-- /bottom-wizard -->
+						</form>
+				</div>
+					<!-- /Wizard container -->
+			</div>
+			<!-- /content-right-->
+		</div>
+		<!-- /row-->
+		<footer id="footer-bottom">
+			<div class="row">
+				<div class="col-lg-12 text-center">
+					<h6>Disclaimer for Symptom Checker</h6>
+					<p>This bot is not designed to, and does not, provide medical advice.
+						All content ("content"), including text, graphics, images and information
+						available on or through this bot are for general informational purposes only.
+						The content is not intended to be a substitute for professional medical advice,
+						diagnosis or treatment. Never disregard professional medical advice, or delay
+						in seeking it, because of something you have read on this bot. Never rely on
+						information on this bot in place of seeking professional medical advice.
+						Renata Limited, Sajida Foundation and Appinion Bd Ltd are not responsible or liable for any advice,
+						course of treatment, diagnosis or any other information, services or products that you obtain
+						through this bot. You are encouraged to confer with your doctor with regard to information
+						contained on or through this bot. After reading information or other content from this bot, you are encouraged to review the information carefully with your professional healthcare provider.</p>
+				</div>
+				<div class="col-lg-12 text-center footer-bottom-develop">
+					<!--<span>
+						<img src="img/renata-logo-230width.png" width="10%" height="10%" alt="" class="img-fluid">
+					</span><br>-->
+					<span style="font-size: 12px;">Developed by <a href="http://appinionbd.com/" target="_blank">Appinion BD Limited</a> and created by <b>Scientists and Doctors at <a href="https://renata-ltd.com/" target="_blank">Renata Limited</a></b>.</span>
+				</div>
+			</div>
+		</footer>
+	</div>
+	<!-- /container-fluid -->
+
+	<div class="cd-overlay-nav">
+		<span></span>
+	</div>
+	<!-- /cd-overlay-nav -->
+
+	<div class="cd-overlay-content">
+		<span></span>
+	</div>
+	<!-- /cd-overlay-content -->
+
+	<!--<a href="#0" class="cd-nav-trigger">Menu<span class="cd-icon"></span></a>-->
+	<!-- /menu button -->
+	
+	<!-- Modal terms -->
+	<div class="modal fade" id="terms-txt" tabindex="-1" role="dialog" aria-labelledby="termsLabel" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h4 class="modal-title" id="termsLabel">Terms and conditions</h4>
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				</div>
+				<div class="modal-body">
+					<p>Lorem ipsum dolor sit amet, in porro albucius qui, in <strong>nec quod novum accumsan</strong>, mei ludus tamquam dolores id. No sit debitis meliore postulant, per ex prompta alterum sanctus, pro ne quod dicunt sensibus.</p>
+					<p>Lorem ipsum dolor sit amet, in porro albucius qui, in nec quod novum accumsan, mei ludus tamquam dolores id. No sit debitis meliore postulant, per ex prompta alterum sanctus, pro ne quod dicunt sensibus. Lorem ipsum dolor sit amet, <strong>in porro albucius qui</strong>, in nec quod novum accumsan, mei ludus tamquam dolores id. No sit debitis meliore postulant, per ex prompta alterum sanctus, pro ne quod dicunt sensibus.</p>
+					<p>Lorem ipsum dolor sit amet, in porro albucius qui, in nec quod novum accumsan, mei ludus tamquam dolores id. No sit debitis meliore postulant, per ex prompta alterum sanctus, pro ne quod dicunt sensibus.</p>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn_1" data-dismiss="modal">Close</button>
+				</div>
+			</div>
+			<!-- /.modal-content -->
+		</div>
+		<!-- /.modal-dialog -->
+	</div>
+	<!-- /.modal -->
+	
+	<!-- COMMON SCRIPTS -->
+	<script src="<?= base_url() ?>/public/assets/frontend/js/jquery-3.2.1.min.js"></script>
+    <script src="<?= base_url() ?>/public/assets/frontend/js/common_scripts.min.js"></script>
+	<script src="<?= base_url() ?>/public/assets/frontend/js/velocity.min.js"></script>
+	<script src="<?= base_url() ?>/public/assets/frontend/js/functions.js"></script>
+
+	<!-- Wizard script -->
+	<script src="<?= base_url() ?>/public/assets/frontend/js/survey_func.js"></script>
+
+	<script>
+		var symptom_page_one = '';
+		var symptom_page_two = '';
+		var pre_existing = '<h3 class="main_question"><strong>6/6</strong>Do You Have Any Pre-Existing Conditions (Please Only Select the Conditions You Have)?</h3>\n' +
+				'\t\t\t\t\t\t\t\t\t<div class="form-group">\n' +
+				'\t\t\t\t\t\t\t\t\t\t<label class="container_check version_2">Do you smoke?\n' +
+				'\t\t\t\t\t\t\t\t\t\t\t<input type="checkbox" onchange="pre_existing_condition()" name="pre_existing_condition[]" value="0.35" class="required pre_existing_condition">\n' +
+				'\t\t\t\t\t\t\t\t\t\t\t<span class="checkmark"></span>\n' +
+				'\t\t\t\t\t\t\t\t\t\t</label>\n' +
+				'\t\t\t\t\t\t\t\t\t</div>\n' +
+				'\t\t\t\t\t\t\t\t\t\t<label class="container_check version_2">Do you have COPD or previous history of respiratory illness?\n' +
+				'\t\t\t\t\t\t\t\t\t\t\t<input type="checkbox" onchange="pre_existing_condition()" name="pre_existing_condition[]" value="2" class="required pre_existing_condition">\n' +
+				'\t\t\t\t\t\t\t\t\t\t\t<span class="checkmark"></span>\n' +
+				'\t\t\t\t\t\t\t\t\t\t</label>\n' +
+				'\t\t\t\t\t\t\t\t\t</div>\n' +
+				'\t\t\t\t\t\t\t\t\t<div class="form-group">\n' +
+				'\t\t\t\t\t\t\t\t\t\t<label class="container_check version_2">Do you have diabetes?\n' +
+				'\t\t\t\t\t\t\t\t\t\t\t<input type="checkbox" onchange="pre_existing_condition()" name="pre_existing_condition[]" value="0.75" class="required pre_existing_condition">\n' +
+				'\t\t\t\t\t\t\t\t\t\t\t<span class="checkmark"></span>\n' +
+				'\t\t\t\t\t\t\t\t\t\t</label>\n' +
+				'\t\t\t\t\t\t\t\t\t</div>\n' +
+				'\t\t\t\t\t\t\t\t\t<div class="form-group">\n' +
+				'\t\t\t\t\t\t\t\t\t\t<label class="container_check version_2">Do you have hypertension?\n' +
+				'\t\t\t\t\t\t\t\t\t\t\t<input type="checkbox" onchange="pre_existing_condition()" name="pre_existing_condition[]" value="1.5" class="required pre_existing_condition">\n' +
+				'\t\t\t\t\t\t\t\t\t\t\t<span class="checkmark"></span>\n' +
+				'\t\t\t\t\t\t\t\t\t\t</label>\n' +
+				'\t\t\t\t\t\t\t\t\t</div>\n' +
+				'\t\t\t\t\t\t\t\t\t<div class="form-group">\n' +
+				'\t\t\t\t\t\t\t\t\t\t<label class="container_check version_2">Are you overweight or obese?\n' +
+				'\t\t\t\t\t\t\t\t\t\t\t<input type="checkbox" onchange="pre_existing_condition()" name="pre_existing_condition[]" value="0.35" class="required pre_existing_condition">\n' +
+				'\t\t\t\t\t\t\t\t\t\t\t<span class="checkmark"></span>\n' +
+				'\t\t\t\t\t\t\t\t\t\t</label>\n' +
+				'\t\t\t\t\t\t\t\t\t</div>\n' +
+				'\t\t\t\t\t\t\t\t\t<div class="form-group">\n' +
+				'\t\t\t\t\t\t\t\t\t\t<label class="container_check version_2">Do you have a previous history of heart attack or any other heart conditions?\n' +
+				'\t\t\t\t\t\t\t\t\t\t\t<input type="checkbox" onchange="pre_existing_condition()" name="pre_existing_condition[]" value="1" class="required pre_existing_condition">\n' +
+				'\t\t\t\t\t\t\t\t\t\t\t<span class="checkmark"></span>\n' +
+				'\t\t\t\t\t\t\t\t\t\t</label>\n' +
+				'\t\t\t\t\t\t\t\t\t</div>\n' +
+				'\t\t\t\t\t\t\t\t\t<div class="form-group">\n' +
+				'\t\t\t\t\t\t\t\t\t\t<label class="container_check version_2">Do you have a history of liver conditions?\n' +
+				'\t\t\t\t\t\t\t\t\t\t\t<input type="checkbox" name="pre_existing_condition[]" value="0.65" class="required pre_existing_condition">\n' +
+				'\t\t\t\t\t\t\t\t\t\t\t<span class="checkmark"></span>\n' +
+				'\t\t\t\t\t\t\t\t\t\t</label>\n' +
+				'\t\t\t\t\t\t\t\t\t</div>\n' +
+				'\t\t\t\t\t\t\t\t\t<div class="form-group">\n' +
+				'\t\t\t\t\t\t\t\t\t\t<label class="container_check version_2">Do you have any kidney diseases?\n' +
+				'\t\t\t\t\t\t\t\t\t\t\t<input type="checkbox" onchange="pre_existing_condition()" name="pre_existing_condition[]" value="0.5" class="required pre_existing_condition">\n' +
+				'\t\t\t\t\t\t\t\t\t\t\t<span class="checkmark"></span>\n' +
+				'\t\t\t\t\t\t\t\t\t\t</label>\n' +
+				'\t\t\t\t\t\t\t\t\t</div>\n' +
+				'\t\t\t\t\t\t\t\t\t<div class="form-group">\n' +
+				'\t\t\t\t\t\t\t\t\t\t<label class="container_check version_2">Did you have any organ/bone marrow transplant?\n' +
+				'\t\t\t\t\t\t\t\t\t\t\t<input type="checkbox" onchange="pre_existing_condition()" name="pre_existing_condition[]" value="3" class="required pre_existing_condition">\n' +
+				'\t\t\t\t\t\t\t\t\t\t\t<span class="checkmark"></span>\n' +
+				'\t\t\t\t\t\t\t\t\t\t</label>\n' +
+				'\t\t\t\t\t\t\t\t\t</div>\n' +
+				'\t\t\t\t\t\t\t\t\t<div class="form-group">\n' +
+				'\t\t\t\t\t\t\t\t\t\t<label class="container_check version_2">Are you pregnant?\n' +
+				'\t\t\t\t\t\t\t\t\t\t\t<input type="checkbox" onchange="pre_existing_condition()" name="pre_existing_condition[]" value="1" class="required pre_existing_condition">\n' +
+				'\t\t\t\t\t\t\t\t\t\t\t<span class="checkmark"></span>\n' +
+				'\t\t\t\t\t\t\t\t\t\t</label>\n' +
+				'\t\t\t\t\t\t\t\t\t</div>\n' +
+				'\t\t\t\t\t\t\t\t\t<div class="form-group">\n' +
+				'\t\t\t\t\t\t\t\t\t\t<label class="container_check version_2">None of the above?\n' +
+				'\t\t\t\t\t\t\t\t\t\t\t<input type="checkbox" onchange="pre_existing_condition()" name="pre_existing_condition[]" value="0" class="required pre_existing_condition pre_existing_condition_zero">\n' +
+				'\t\t\t\t\t\t\t\t\t\t\t<span class="checkmark"></span>\n' +
+				'\t\t\t\t\t\t\t\t\t\t</label>\n' +
+				'\t\t\t\t\t\t\t\t\t</div>';
+
+		var pre_existing_2 = '<h3 class="main_question"><strong>6/6</strong>Do You Have Any Pre-Existing Conditions (Please Only Select the Conditions You Have)?</h3>\n' +
+				'\t\t\t\t\t\t\t\t\t<div class="form-group">\n' +
+				'\t\t\t\t\t\t\t\t\t\t<label class="container_check version_2">Do you smoke?\n' +
+				'\t\t\t\t\t\t\t\t\t\t\t<input type="checkbox" onchange="pre_existing_condition()" name="pre_existing_condition[]" value="0.35" class="required pre_existing_condition">\n' +
+				'\t\t\t\t\t\t\t\t\t\t\t<span class="checkmark"></span>\n' +
+				'\t\t\t\t\t\t\t\t\t\t</label>\n' +
+				'\t\t\t\t\t\t\t\t\t</div>\n' +
+				'\t\t\t\t\t\t\t\t\t\t<label class="container_check version_2">Do you have asthma or any history of respiratory illness?\n' +
+				'\t\t\t\t\t\t\t\t\t\t\t<input type="checkbox" onchange="pre_existing_condition()" name="pre_existing_condition[]" value="2" class="required pre_existing_condition">\n' +
+				'\t\t\t\t\t\t\t\t\t\t\t<span class="checkmark"></span>\n' +
+				'\t\t\t\t\t\t\t\t\t\t</label>\n' +
+				'\t\t\t\t\t\t\t\t\t</div>\n' +
+				'\t\t\t\t\t\t\t\t\t<div class="form-group">\n' +
+				'\t\t\t\t\t\t\t\t\t\t<label class="container_check version_2">Do you have diabetes?\n' +
+				'\t\t\t\t\t\t\t\t\t\t\t<input type="checkbox" onchange="pre_existing_condition()" name="pre_existing_condition[]" value="0.75" class="required pre_existing_condition">\n' +
+				'\t\t\t\t\t\t\t\t\t\t\t<span class="checkmark"></span>\n' +
+				'\t\t\t\t\t\t\t\t\t\t</label>\n' +
+				'\t\t\t\t\t\t\t\t\t</div>\n' +
+				'\t\t\t\t\t\t\t\t\t<div class="form-group">\n' +
+				'\t\t\t\t\t\t\t\t\t\t<label class="container_check version_2">Do you have hypertension?\n' +
+				'\t\t\t\t\t\t\t\t\t\t\t<input type="checkbox" onchange="pre_existing_condition()" name="pre_existing_condition[]" value="1.5" class="required pre_existing_condition">\n' +
+				'\t\t\t\t\t\t\t\t\t\t\t<span class="checkmark"></span>\n' +
+				'\t\t\t\t\t\t\t\t\t\t</label>\n' +
+				'\t\t\t\t\t\t\t\t\t</div>\n' +
+				'\t\t\t\t\t\t\t\t\t<div class="form-group">\n' +
+				'\t\t\t\t\t\t\t\t\t\t<label class="container_check version_2">Are you overweight or obese?\n' +
+				'\t\t\t\t\t\t\t\t\t\t\t<input type="checkbox" onchange="pre_existing_condition()" name="pre_existing_condition[]" value="0.35" class="required pre_existing_condition">\n' +
+				'\t\t\t\t\t\t\t\t\t\t\t<span class="checkmark"></span>\n' +
+				'\t\t\t\t\t\t\t\t\t\t</label>\n' +
+				'\t\t\t\t\t\t\t\t\t</div>\n' +
+				'\t\t\t\t\t\t\t\t\t<div class="form-group">\n' +
+				'\t\t\t\t\t\t\t\t\t\t<label class="container_check version_2">Do you have a previous history of heart attack or any other heart conditions?\n' +
+				'\t\t\t\t\t\t\t\t\t\t\t<input type="checkbox" onchange="pre_existing_condition()" name="pre_existing_condition[]" value="1" class="required pre_existing_condition">\n' +
+				'\t\t\t\t\t\t\t\t\t\t\t<span class="checkmark"></span>\n' +
+				'\t\t\t\t\t\t\t\t\t\t</label>\n' +
+				'\t\t\t\t\t\t\t\t\t</div>\n' +
+				'\t\t\t\t\t\t\t\t\t<div class="form-group">\n' +
+				'\t\t\t\t\t\t\t\t\t\t<label class="container_check version_2">Do you have a history of liver conditions?\n' +
+				'\t\t\t\t\t\t\t\t\t\t\t<input type="checkbox" name="pre_existing_condition[]" value="0.65" class="required pre_existing_condition">\n' +
+				'\t\t\t\t\t\t\t\t\t\t\t<span class="checkmark"></span>\n' +
+				'\t\t\t\t\t\t\t\t\t\t</label>\n' +
+				'\t\t\t\t\t\t\t\t\t</div>\n' +
+				'\t\t\t\t\t\t\t\t\t<div class="form-group">\n' +
+				'\t\t\t\t\t\t\t\t\t\t<label class="container_check version_2">Do you have any kidney diseases?\n' +
+				'\t\t\t\t\t\t\t\t\t\t\t<input type="checkbox" onchange="pre_existing_condition()" name="pre_existing_condition[]" value="0.5" class="required pre_existing_condition">\n' +
+				'\t\t\t\t\t\t\t\t\t\t\t<span class="checkmark"></span>\n' +
+				'\t\t\t\t\t\t\t\t\t\t</label>\n' +
+				'\t\t\t\t\t\t\t\t\t</div>\n' +
+				'\t\t\t\t\t\t\t\t\t<div class="form-group">\n' +
+				'\t\t\t\t\t\t\t\t\t\t<label class="container_check version_2">Did you have any organ/bone marrow transplant?\n' +
+				'\t\t\t\t\t\t\t\t\t\t\t<input type="checkbox" onchange="pre_existing_condition()" name="pre_existing_condition[]" value="3" class="required pre_existing_condition">\n' +
+				'\t\t\t\t\t\t\t\t\t\t\t<span class="checkmark"></span>\n' +
+				'\t\t\t\t\t\t\t\t\t\t</label>\n' +
+				'\t\t\t\t\t\t\t\t\t</div>\n' +
+				'\t\t\t\t\t\t\t\t\t<div class="form-group">\n' +
+				'\t\t\t\t\t\t\t\t\t\t<label class="container_check version_2">Are you pregnant?\n' +
+				'\t\t\t\t\t\t\t\t\t\t\t<input type="checkbox" onchange="pre_existing_condition()" name="pre_existing_condition[]" value="1" class="required pre_existing_condition">\n' +
+				'\t\t\t\t\t\t\t\t\t\t\t<span class="checkmark"></span>\n' +
+				'\t\t\t\t\t\t\t\t\t\t</label>\n' +
+				'\t\t\t\t\t\t\t\t\t</div>\n' +
+				'\t\t\t\t\t\t\t\t\t<div class="form-group">\n' +
+				'\t\t\t\t\t\t\t\t\t\t<label class="container_check version_2">None of the above?\n' +
+				'\t\t\t\t\t\t\t\t\t\t\t<input type="checkbox" onchange="pre_existing_condition()" name="pre_existing_condition[]" value="0" class="required pre_existing_condition pre_existing_condition_zero">\n' +
+				'\t\t\t\t\t\t\t\t\t\t\t<span class="checkmark"></span>\n' +
+				'\t\t\t\t\t\t\t\t\t\t</label>\n' +
+				'\t\t\t\t\t\t\t\t\t</div>';
+
+		var symptoms_days = '<h3 class="main_question"><strong>5/6</strong>How many days have you had these Symptoms?</h3>\n' +
+				'\t\t\t\t\t\t\t\t\t<div class="form-group">\n' +
+				'\t\t\t\t\t\t\t\t\t\t<label class="container_radio version_2">Day 1-4\n' +
+				'\t\t\t\t\t\t\t\t\t\t\t<input type="radio" name="symptoms_duration" value="0.5"  onchange="symptoms_day()" class="required symptoms">\n' +
+				'\t\t\t\t\t\t\t\t\t\t\t<span class="checkmark"></span>\n' +
+				'\t\t\t\t\t\t\t\t\t\t</label>\n' +
+				'\t\t\t\t\t\t\t\t\t</div>\n' +
+				'\t\t\t\t\t\t\t\t\t<div class="form-group">\n' +
+				'\t\t\t\t\t\t\t\t\t\t<label class="container_radio version_2">Day 5-7\n' +
+				'\t\t\t\t\t\t\t\t\t\t\t<input type="radio" name="symptoms_duration" value="1" onchange="symptoms_day()" class="required symptoms">\n' +
+				'\t\t\t\t\t\t\t\t\t\t\t<span class="checkmark"></span>\n' +
+				'\t\t\t\t\t\t\t\t\t\t</label>\n' +
+				'\t\t\t\t\t\t\t\t\t</div>\n' +
+				'\t\t\t\t\t\t\t\t\t<div class="form-group">\n' +
+				'\t\t\t\t\t\t\t\t\t\t<label class="container_radio version_2">Day 8+\n' +
+				'\t\t\t\t\t\t\t\t\t\t\t<input type="radio" name="symptoms_duration" value="2.5"  onchange="symptoms_day()" class="required symptoms">\n' +
+				'\t\t\t\t\t\t\t\t\t\t\t<span class="checkmark"></span>\n' +
+				'\t\t\t\t\t\t\t\t\t\t</label>\n' +
+				'\t\t\t\t\t\t\t\t\t</div>';
+
+
+		async function get_step_id(){
+
+			active_deactive(0);
+
+			var id  = $(".step.current").attr('id');
+			var age = '';
+			if (id == 3){
+
+				symptom_page_one = $('input[name="symptom_page_one[]"]:checked').map(function () {
+					return this.value; // $(this).val()
+				}).get();
+
+			}else if(id == 4){
+				symptom_page_two = $('input[name="symptom_page_two[]"]:checked').map(function () {
+					return this.value; // $(this).val()
+				}).get();
+
+				if ((symptom_page_one[0] == 0) && (symptom_page_two[0] == 0) ){
+
+					$(".pre-existing-condition").html(pre_existing);
+					//$("#bottom-wizard button.submit").css('display','block');
+				}else{
+					$(".pre-existing-condition").html(symptoms_days);
+					//$("#bottom-wizard button.submit").css('display','block');
+				}
+			}
+
+		}
+
+		$('input[name="symptom_page_one[]"').on('change', function(event) {
+			if (event.target.value == 0){
+				$('input[name="symptom_page_one[]"').not(this).prop('checked', false);
+			}else{
+				$(".symptom_page_one_zero").prop('checked',false);
+			}
+		});
+
+		$('input[name="symptom_page_two[]"').on('change', function(event) {
+			if (event.target.value == 0){
+				$('input[name="symptom_page_two[]"').not(this).prop('checked', false);
+			}else{
+				$(".symptom_page_two_zero").prop('checked',false);
+			}
+		});
+
+		$('input[name="pre_existing_condition[]"').on('change', function(event) {
+			console.log(event.target.value);
+			if (event.target.value == 0){
+				$('input[name="pre_existing_condition[]"').not(this).prop('checked', false);
+			}else{
+				$(".pre_existing_condition_zero").prop('checked',false);
+			}
+		});
+
+		/*$('input[name="pre_existing_condition"]').on('change', function(event) {
+			$("#bottom-wizard button.submit").css('display','block');
+		});*/
+
+		function symptoms_day(){
+			calculate_level();
+			//active_deactive(1);
+		}
+
+		function pre_existing_condition(){
+			active_deactive(1);
+			$("button.forward").attr('disabled',true);
+		}
+
+		function active_deactive(value){
+			if (value == 1){
+				$("#bottom-wizard button.submit").css('display','block');
+				$("#bottom-wizard button.submit").attr('disabled',false);
+			}else {
+				$("#bottom-wizard button.submit").css('display','none');
+			}
+		}
+
+		async function submit_survey(){
+
+			var age = $(".patient_age:checked").val();
+			console.log("age: " + age);
+			var symptoms_one = $('input[name="symptom_page_one[]"]:checked').map(function () {
+				return this.value; // $(this).val()
+			}).get();
+			console.log("symptom_page_one Array: " + symptoms_one);
+
+			var symptoms_two = $('input[name="symptom_page_two[]"]:checked').map(function () {
+				return this.value; // $(this).val()
+			}).get();
+
+			console.log("symptom_page_two Array: " +  symptoms_two);
+
+			var pre_existing_condition = $('input[name="pre_existing_condition[]"]:checked').map(function () {
+				return this.value; // $(this).val()
+			}).get();
+			console.log("pre_existing_condition Array: " + pre_existing_condition);
+
+			var symptoms_days = $(".symptoms").val();
+			console.log("symptoms_days : " + symptoms_days);
+
+			var sum_symptoms_one = 0;
+			var sum_symptoms_two = 0;
+			var sum_pre_existing_condition = 0;
+
+			for (var i = 0; i<symptoms_one.length; i++){
+				sum_symptoms_one = sum_symptoms_one + Number(symptoms_one[i]);
+			}
+			console.log("sum_symptoms_one Sum: " + sum_symptoms_one);
+
+			for (var i = 0; i<symptoms_two.length; i++){
+				sum_symptoms_two = sum_symptoms_two + Number(symptoms_two[i]);
+			}
+
+			console.log("sum_symptoms_two Sum: " + sum_symptoms_two);
+
+			for (var i = 0; i<pre_existing_condition.length; i++){
+				sum_pre_existing_condition = sum_pre_existing_condition + Number(pre_existing_condition[i]);
+			}
+
+			console.log("pre_existing_condition Sum: " + sum_pre_existing_condition);
+
+			var calculate_seventy = 0;
+			var calculate_thirty = 0;
+			/*if (symptoms_days == null || symptoms_days == undefined || symptoms_days == ''){
+				calculate_seventy = Number(age) * 0.7;
+				calculate_thirty = sum_pre_existing_condition * 0.3;
+			}else{
+				calculate_seventy = (Number(age) + sum_symptoms_one + sum_symptoms_two + Number(symptoms_days))*0.7;
+			}*/
+			var sum_seventy = Number(age) + sum_symptoms_one + sum_symptoms_two + Number(symptoms_days);
+			console.log("sum_seventy :"+ sum_seventy);
+
+			calculate_seventy = (Number(age) + sum_symptoms_one + sum_symptoms_two + Number(symptoms_days))*0.7;
+			calculate_thirty = sum_pre_existing_condition * 0.3;
+			console.log("Seventy: "+calculate_seventy);
+			console.log("Thirty: " +calculate_thirty);
+			var total = calculate_seventy + calculate_thirty;
+			console.log("Total: " + total);
+			if (total >= 6){
+				var high = '<div class="result-area" style="border-bottom: 1px solid #ededed"><h3 class="text-center" style="color: red">Tier 3: 5.94+</h3>\n' +
+						'\t\t\t\t\t\t<p class="" style="font-size: 18px; font-weight: bold; text-align: left; color: red">\n' +
+						'\t\t\t\t\t\t\tWe recommend you seek immediate medical attention - please press “Doctor Consultation Below” to connect with a doctor.\n' +
+						'\t\t\t\t\t\t\tYou can also choose to contact IEDCR or another doctor if you have access to them\n' +
+						'\t\t\t\t\t\t</p>\n' +
+						'\t\t\t\t\t</div><div class="re-test pull-right" style="float: right; margin-top: 5px;">\n' +
+						'\t\t\t\t\t\<a href="<?= site_url('initiate_test') ?>"><button type="button" style="background: #434bdf" class="test_again btn btn-info">Restart Test</button></a>\n' +
+						'\t\t\t\t\t</div>';
+
+				//high = high + placeHolder;
+				$("#wizard_container").html(high);
+			}else if(total >= 4.4 && total <= 5.94){
+				var medium = '<div class="result-area" style="border-bottom: 1px solid #ededed"><h3 class="text-center" style="color: #1155cc">Tier 2: 4.4 - 5.94</h3>\n' +
+						'\t\t\t\t\t\t<p class="" style="font-size: 15px; font-weight: bold; text-align: left; color: #1155cc">\n' +
+						'\t\t\t\t\t\t\tYour symptoms at this moment do not seem to require immediate medical attention.\n' +
+						'\t\t\t\t\t\t</p>\n' +
+						'\t\t\t\t\t\t<p style="font-size: 15px; color: #1155cc"><b>However, if your symptoms worsen in the next few days and you develop any of the following:</b></p>\n' +
+						'\t\t\t\t\t\t<ul style="color: #1155cc; list-style: circle; margin: 0;">\n' +
+						'\t\t\t\t\t\t\t<li><p style="font-weight: bold">Extreme difficulty in breathing</p></li>\n' +
+						'\t\t\t\t\t\t\t<li><p style="font-weight: bold">Chest pain and pressure</p></li>\n' +
+						'\t\t\t\t\t\t\t<li><p style="font-weight: bold">Extreme Drowsiness, Sudden Dizziness and Losing consciousness</p></li>\n' +
+						'\t\t\t\t\t\t</ul>\n' +
+						'\t\t\t\t\t\t<p style="font-size: 15px; color: #1155cc"><b>Please come back to us or consult a doctor immediately.</b></p>\n' +
+						'\n' +
+						'\t\t\t\t\t\t<p style="font-size: 15px; color: black"><b>Meanwhile it is important to remember to:</b></p>\n' +
+						'\t\t\t\t\t\t<ul style="list-style: decimal">\n' +
+						'\t\t\t\t\t\t\t<li><p style="font-weight: bold; color: black">Strictly maintain disinfection throughout the day;\n' +
+						'\t\t\t\t\t\t\t\twash your hands with soap for 20-30 secs or use hand sanitise.</p></li>\n' +
+						'\t\t\t\t\t\t\t<li><p style="font-weight: bold; color: black">Disinfect surfaces that are regularly touched around you</p></li>\n' +
+						'\t\t\t\t\t\t\t<li><p style="font-weight: bold; color: black">Only step outside if it’s important and if you do, wear a mask.</p></li>\n' +
+						'\t\t\t\t\t\t\t<li><p style="font-weight: bold; color: black">Ensure you use a tissue or cover your face when coughing/sneezing.\n' +
+						'\t\t\t\t\t\t\t\tRemember, this disease spreads by tiny droplets from sneezes/coughs.</p></li>\n' +
+						'\t\t\t\t\t\t\t<li><p style="font-weight: bold; color: black">Only step outside if it’s an emergency\n' +
+						'\t\t\t\t\t\t\t\tand try to work from home. If you must step outside, wear a mask</p></li>\n' +
+						'\t\t\t\t\t\t</ul>\n' +
+						'\t\t\t\t\t</div><div class="re-test pull-right" style="float: right; margin-top: 5px;">\n' +
+						'\t\t\t\t\t\<a href="<?= site_url('initiate_test') ?>"><button type="button" style="background: #434bdf" class="test_again btn btn-info">Restart Test</button></a>\n' +
+						'\t\t\t\t\t</div>';
+
+				$("#wizard_container").html(medium);
+			}else{
+				var low = '<div class="result-area" style="border-bottom: 1px solid #ededed"><h3 class="text-center" style="color:darkgreen">Tier 1: 0.5 - 4.39</h3>\n' +
+						'\t\t\t\t\t\t<p class="" style="font-size: 18px; font-weight: bold; text-align: left; color:darkgreen">\n' +
+						'\t\t\t\t\t\t\tCurrently your symptoms do not seem to require immediate medical attention.\n' +
+						'\t\t\t\t\t\t\tIT IS HOWEVER VERY IMPORTANT that you stay indoors for at least 14 days and\n' +
+						'\t\t\t\t\t\t\tconsult our “protect yourself” page to see how to properly sanitize yourself and your home.\n' +
+						'\t\t\t\t\t\t</p>\n' +
+						'\t\t\t\t\t\t<p style="font-size: 15px;"><b>Remember:</b></p>\n' +
+						'\t\t\t\t\t\t<ul style="list-style: decimal">\n' +
+						'\t\t\t\t\t\t\t<li><p style="font-weight: bold; color: black">It is important to follow good hygiene practices; wash your\n' +
+						'\t\t\t\t\t\t\t\thands for 20-30 secs with soap or use sanitizer often throughout the day.</p></li>\n' +
+						'\t\t\t\t\t\t\t<li><p style="font-weight: bold; color: black">Ensure use of tissue or cover your mouth when sneezing/coughing.\n' +
+						'\t\t\t\t\t\t\t\tRemember this disease spreads by tiny droplets from sneeze/ cough.</p></li>\n' +
+						'\t\t\t\t\t\t\t<li><p style="font-weight: bold; color: black">Only step outside if it’s important and if you do, wear a mask.</p></li>\n' +
+						'\t\t\t\t\t\t\t<li><p style="font-weight: bold; color: black">Practise social distancing, especially from elderly people and\n' +
+						'\t\t\t\t\t\t\t\tothers with pre-existing illnesse.</p></li>\n' +
+						'\t\t\t\t\t\t\t<li><p style="font-weight: bold; color: black">If your symptoms progressively get worse, you can come back to us or\n' +
+						'\t\t\t\t\t\t\t\tconsult a doctor if you have access to them.</p></li>\n' +
+						'\t\t\t\t\t\t\t<li><p style="font-weight: bold; color: black">If you face difficulty breathing, experience sudden dizziness and feel pressure/pain\n' +
+						'\t\t\t\t\t\t\t\tin your chest, consult a doctor or call the IEDCR hotline.</p></li>\n' +
+						'\t\t\t\t\t\t</ul>\n' +
+						'\t\t\t\t\t</div><div class="re-test pull-right" style="float: right; margin-top: 5px;">\n' +
+						'\t\t\t\t\t\<a href="<?= site_url('initiate_test') ?>"><button type="button" style="background: #434bdf" class="test_again btn btn-info">Restart Test</button></a>\n' +
+						'\t\t\t\t\t</div>';
+
+				//low = low + placeHolder;
+				$("#wizard_container").html(low);
+			}
+
+		}
+
+		async function calculate_level(){
+
+			var age = $(".patient_age:checked").val();
+			console.log("age :" + age);
+			var symptoms_one = $('input[name="symptom_page_one[]"]:checked').map(function () {
+				return this.value; // $(this).val()
+			}).get();
+            console.log("symptom_page_one :" + symptoms_one);
+
+			var symptoms_two = $('input[name="symptom_page_two[]"]:checked').map(function () {
+				return this.value; // $(this).val()
+			}).get();
+
+			var pre_existing_condition = $('input[name="pre_existing_condition[]"]:checked').map(function () {
+				return this.value; // $(this).val()
+			}).get();
+
+			var symptoms_days = $(".symptoms").val();
+
+			var sum_symptoms_one = 0;
+			var sum_symptoms_two = 0;
+			var sum_pre_existing_condition = 0;
+
+			for (var i = 0; i<symptoms_one.length; i++){
+				sum_symptoms_one = sum_symptoms_one + Number(symptoms_one[i]);
+			}
+			console.log(sum_symptoms_one);
+
+			for (var i = 0; i<symptoms_two.length; i++){
+				sum_symptoms_two = sum_symptoms_two + Number(symptoms_two[i]);
+			}
+			console.log(sum_symptoms_two);
+
+			for (var i = 0; i<pre_existing_condition.length; i++){
+				sum_pre_existing_condition = sum_pre_existing_condition + Number(pre_existing_condition[i]);
+			}
+			console.log(sum_pre_existing_condition);
+
+			var calculate_seventy = 0;
+			var calculate_thirty = 0;
+			/*if (symptoms_days == null || symptoms_days == undefined || symptoms_days == ''){
+				calculate_seventy = Number(age) * 0.7;
+				calculate_thirty = sum_pre_existing_condition * 0.3;
+			}else{
+				calculate_seventy = (Number(age) + sum_symptoms_one + sum_symptoms_two + Number(symptoms_days))*0.7;
+			}*/
+			calculate_seventy = (Number(age) + sum_symptoms_one + sum_symptoms_two + Number(symptoms_days))*0.7;
+
+			var total = calculate_seventy;
+			console.log("Calculate: "+total);
+			if (total < 5.95){
+				$('.pre-existing-condition_2').html(pre_existing_2);
+			}else{
+				active_deactive(1);
+				$("button.forward").attr('disabled',true);
+			}
+		}
+	</script>
+
+</body>
+</html>

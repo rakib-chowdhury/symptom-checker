@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="COVID 19 RESPONSE BANGLADESH">
+    <meta name="author" content="Sarwar">
+    <title>Symptom Checker</title>
+
+    <!-- Favicons-->
+    <link rel="shortcut icon" href="<?= base_url() ?>/public/assets/frontend/img/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" type="image/x-icon" href="<?= base_url() ?>/public/assets/frontend/img/apple-touch-icon-57x57-precomposed.png">
+    <link rel="apple-touch-icon" type="image/x-icon" sizes="72x72" href="<?= base_url() ?>/public/assets/frontend/img/apple-touch-icon-72x72-precomposed.png">
+    <link rel="apple-touch-icon" type="image/x-icon" sizes="114x114" href="<?= base_url() ?>/public/assets/frontend/img/apple-touch-icon-114x114-precomposed.png">
+    <link rel="apple-touch-icon" type="image/x-icon" sizes="144x144" href="<?= base_url() ?>/public/assets/frontend/img/apple-touch-icon-144x144-precomposed.png">
+
+    <!-- GOOGLE WEB FONT -->
+    <link href="https://fonts.googleapis.com/css?family=Work+Sans:400,500,600" rel="stylesheet">
+
+    <!-- BASE CSS -->
+    <link href="<?= base_url() ?>/public/assets/frontend/css/bootstrap.min.css" rel="stylesheet">
+    <link href="<?= base_url() ?>/public/assets/frontend/css/menu.css" rel="stylesheet">
+    <link href="<?= base_url() ?>/public/assets/frontend/css/style.css" rel="stylesheet">
+    <link href="<?= base_url() ?>/public/assets/frontend/css/vendors.css" rel="stylesheet">
+
+    <!-- YOUR CUSTOM CSS -->
+    <!--<link href="css/custom.css" rel="stylesheet">-->
+
+    <!-- MODERNIZR MENU -->
+    <script src="<?= base_url() ?>/public/assets/frontend/js/modernizr.js"></script>
+
+</head>
+
+<body>
+
+<div id="preloader">
+    <div data-loader="circle-side"></div>
+</div><!-- /Preload -->
+
+<div id="loader_form">
+    <div data-loader="circle-side-2"></div>
+</div><!-- /loader_form -->
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-12  text-center top-logo">
+            <img style="margin-top: 2%" src="<?= base_url() ?>/public/assets/frontend/img/logo_5.png" width="50%" height="50%" alt="" class="img-fluid">
+        </div>
+        <div class="col-lg-12 content-right">
+            <h6 style="font-size: 25px; text-align: center">Welcome to Symptom Checker</h6>
+        </div>
+
+        <div class="col-lg-12 content-right">
+            <a href="<?= site_url('initiate_test') ?>" class="get-started btn btn-info">Get Started</a>
+        </div>
+    </div>
+    <!-- /row-->
+    <footer id="footer-bottom" style="margin-top: 5%">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h6 style="font-size: 10px;">Disclaimer for Symptom Checker</h6>
+                <p>This bot is not designed to, and does not, provide medical advice.
+                    All content ("content"), including text, graphics, images and information
+                    available on or through this bot are for general informational purposes only.
+                    The content is not intended to be a substitute for professional medical advice,
+                    diagnosis or treatment. Never disregard professional medical advice, or delay
+                    in seeking it, because of something you have read on this bot. Never rely on
+                    information on this bot in place of seeking professional medical advice.
+                    Renata Limited, Sajida Foundation and Appinion Bd Ltd are not responsible or liable for any advice,
+                    course of treatment, diagnosis or any other information, services or products that you obtain
+                    through this bot. You are encouraged to confer with your doctor with regard to information
+                    contained on or through this bot. After reading information or other content from this bot, you are encouraged to review the information carefully with your professional healthcare provider.</p>
+            </div>
+            <div class="col-lg-12 text-center footer-bottom-develop">
+                <!--<span>
+                    <img src="img/renata-logo-230width.png" width="10%" height="10%" alt="" class="img-fluid">
+                </span><br>-->
+                <span style="font-size: 12px;">Developed by <a href="http://appinionbd.com/" target="_blank">Appinion BD Limited</a> and created by <b>Scientists and Doctors at
+                    <a href="https://renata-ltd.com/" target="_blank">Renata Limited</a></b>.</span>
+            </div>
+        </div>
+    </footer>
+</div>
+<!-- /container-fluid -->
+
+<div class="cd-overlay-nav">
+    <span></span>
+</div>
+<!-- /cd-overlay-nav -->
+
+<div class="cd-overlay-content">
+    <span></span>
+</div>
+<!-- /cd-overlay-content -->
+
+<!--<a href="#0" class="cd-nav-trigger">Menu<span class="cd-icon"></span></a>-->
+<!-- /menu button -->
+
+<!-- Modal terms -->
+<div class="modal fade" id="terms-txt" tabindex="-1" role="dialog" aria-labelledby="termsLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="termsLabel">Terms and conditions</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p>Lorem ipsum dolor sit amet, in porro albucius qui, in <strong>nec quod novum accumsan</strong>, mei ludus tamquam dolores id. No sit debitis meliore postulant, per ex prompta alterum sanctus, pro ne quod dicunt sensibus.</p>
+                <p>Lorem ipsum dolor sit amet, in porro albucius qui, in nec quod novum accumsan, mei ludus tamquam dolores id. No sit debitis meliore postulant, per ex prompta alterum sanctus, pro ne quod dicunt sensibus. Lorem ipsum dolor sit amet, <strong>in porro albucius qui</strong>, in nec quod novum accumsan, mei ludus tamquam dolores id. No sit debitis meliore postulant, per ex prompta alterum sanctus, pro ne quod dicunt sensibus.</p>
+                <p>Lorem ipsum dolor sit amet, in porro albucius qui, in nec quod novum accumsan, mei ludus tamquam dolores id. No sit debitis meliore postulant, per ex prompta alterum sanctus, pro ne quod dicunt sensibus.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn_1" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+<!-- /.modal -->
+
+<!-- COMMON SCRIPTS -->
+<script src="<?= base_url() ?>/public/assets/frontend/js/jquery-3.2.1.min.js"></script>
+<script src="<?= base_url() ?>/public/assets/frontend/js/common_scripts.min.js"></script>
+<script src="<?= base_url() ?>/public/assets/frontend/js/velocity.min.js"></script>
+<script src="<?= base_url() ?>/public/assets/frontend/js/functions.js"></script>
+
+</body>
+</html>
